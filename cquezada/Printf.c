@@ -6,12 +6,12 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/03/09 15:40:14 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/06/29 11:20:59 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "Funciones/libft.h"
+#include "Libft/libft.h"
 #include <stdarg.h>
 #include <unistd.h>
 
