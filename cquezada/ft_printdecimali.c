@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printdecimali.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 18:23:08 by cquezada          #+#    #+#             */
-/*   Updated: 2020/08/11 11:51:58 by cquezada         ###   ########.fr       */
+/*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
+/*   Updated: 2020/09/03 12:31:51 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
+#include "Libft/libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_printdecimali(va_list args)
 {
-	void *puntero;
+	char d;
 
-	puntero = malloc(count * size);
-	if (puntero == NULL)
-		return (puntero);
-	ft_bzero(puntero, size * count);
-	return (puntero);
+	d = va_arg(args, int);
+	ft_putnbr_fd(d, 1);
 }

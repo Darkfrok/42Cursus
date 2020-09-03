@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 18:23:08 by cquezada          #+#    #+#             */
-/*   Updated: 2020/08/11 11:51:58 by cquezada         ###   ########.fr       */
+/*   Created: 2020/09/03 11:50:21 by cquezada          #+#    #+#             */
+/*   Updated: 2020/09/03 12:19:19 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
+#include "Libft/libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_printchar(va_list args)
 {
-	void *puntero;
+	char c;
 
-	puntero = malloc(count * size);
-	if (puntero == NULL)
-		return (puntero);
-	ft_bzero(puntero, size * count);
-	return (puntero);
+	c = va_arg(args, char);
+	ft_putchar_fd(c, 1);
 }

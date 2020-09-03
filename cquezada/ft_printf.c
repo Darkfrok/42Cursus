@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Printf.c                                           :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/06/29 11:20:59 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/03 12:38:29 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "Libft/libft.h"
+#include "./Libft/libft.h"
 #include <stdarg.h>
 #include <unistd.h>
+#include "./ft_printf.h"
 
 void	ft_putchar(char c)
 {
@@ -37,6 +38,21 @@ int		ft_printf(const char *str, ...)
 				ft_putchar('%');
 				cont++;
 			}
+			if (str[cont] == 's')
+			{
+				ft_printstr(args);
+				str++;
+			}
+			if (str[cont] == 'c')
+			{
+				ft_printchar(args);
+				str++;
+			}
+			if (str[cont] == ('d') || str[cont] == ('i'))
+			{
+				ft_printdecimali(args);
+				str++;
+			}
 		}
 		ft_putchar(str[cont]);
 		cont++;
@@ -46,5 +62,5 @@ int		ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("Hello Worlds cspdiuxX % \n");
+	ft_printf("Hola %d \n", 1);
 }
