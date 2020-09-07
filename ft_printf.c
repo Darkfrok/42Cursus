@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/03 12:38:29 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/07 12:04:50 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "./ft_printf.h"
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -53,6 +54,16 @@ int		ft_printf(const char *str, ...)
 				ft_printdecimali(args);
 				str++;
 			}
+			if (str[cont] == 'u')
+			{
+				ft_printu(args);
+				str++;
+			}
+			if (str[cont] == 'X')
+			{
+				ft_printxm(args);
+				str++;
+			}
 		}
 		ft_putchar(str[cont]);
 		cont++;
@@ -62,5 +73,9 @@ int		ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("Hola %d \n", 1);
+	char *t;
+
+	t = "Buenas tardes";
+	ft_printf("Hola %s \n", t);
+	printf("Hola %s \n", t);
 }

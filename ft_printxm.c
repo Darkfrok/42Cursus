@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printdecimali.c                                 :+:      :+:    :+:   */
+/*   ft_printxm.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/03 12:31:51 by cquezada         ###   ########.fr       */
+/*   Created: 2020/09/04 13:03:22 by cquezada          #+#    #+#             */
+/*   Updated: 2020/09/04 13:16:12 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include "Libft/libft.h"
 
-void	ft_printdecimali(va_list args)
+void	ft_printxm(va_list args)
 {
-	char d;
+	char *X;
 
-	d = va_arg(args, int);
-	ft_putnbr_fd(d, 1);
+	X = va_arg(args, char*);
+	ft_putstr_fd("Esto imprime un entero en base 16 con las letras en MAYUSCULAS", 1);
 }

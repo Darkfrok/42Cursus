@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printpointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/03 12:31:49 by cquezada         ###   ########.fr       */
+/*   Created: 2020/09/04 13:20:59 by cquezada          #+#    #+#             */
+/*   Updated: 2020/09/04 13:21:50 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include "./Libft/libft.h"
-# include <stdarg.h>
+#include "printf.h"
+#include "Libft/libft.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_printstr(va_list args);
-void	ft_printchar(va_list args);
-void	ft_printdecimali(va_list args);
-#endif
+void	ft_printpointer(va_list args)
+{
+	char *p;
+
+	p = va_arg(args, char*);
+	ft_putstr_fd("Esto imprime la direccion de memoria de un puntero", 1);
+}
