@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darkfrok <darkfrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/07 11:05:54 by darkfrok         ###   ########.fr       */
+/*   Updated: 2020/09/09 03:54:42 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	ft_printu(va_list args);
 void	ft_printxm(va_list args);
 void	ft_printx(va_list args);
 void	ft_printpointer(va_list args);
+void	resetflags(t_flags *flags);
+void	printflags(t_flags flags);
 #endif

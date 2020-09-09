@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/07 12:04:50 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/09 04:14:36 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,56 +26,65 @@ int		ft_printf(const char *str, ...)
 {
 	va_list args;
 	int cont;
+	int pos;
+	t_flags	flags;
 
+	pos = 0;
 	cont = 0;
 	va_start(args, str);
-	while (str[cont] != '\0')
+	while (str[pos] != '\0')
 	{
-		if (str[cont] == '%')
+		if (str[pos] == '%')
 		{
+			resetflags(&flags);
 			cont++;
-			if (str[cont] == '%')
+			pos++;
+			ft_checkflags(&str[pos], &flags);
+			if (str[pos] == '%')
 			{
 				ft_putchar('%');
 				cont++;
+				pos++;
 			}
-			if (str[cont] == 's')
+			if (str[pos] == 's')
 			{
 				ft_printstr(args);
-				str++;
+				pos++;
 			}
-			if (str[cont] == 'c')
+			if (str[pos] == 'c')
 			{
 				ft_printchar(args);
-				str++;
+				pos++;
+				cont++;
 			}
-			if (str[cont] == ('d') || str[cont] == ('i'))
+			if (str[pos] == ('d') || str[pos] == ('i'))
 			{
 				ft_printdecimali(args);
-				str++;
+				pos++;
 			}
-			if (str[cont] == 'u')
+			if (str[pos] == 'u')
 			{
 				ft_printu(args);
-				str++;
+				pos++;
 			}
-			if (str[cont] == 'X')
+			if (str[pos] == 'X')
 			{
 				ft_printxm(args);
-				str++;
+				pos++;
 			}
 		}
-		ft_putchar(str[cont]);
+		ft_putchar(str[pos]);
+		pos++;
 		cont++;
 	}
+	printflags(flags);
 	return (0);
 }
 
 int	main(void)
 {
-	char *t;
 
-	t = "Buenas tardes";
-	ft_printf("Hola %s \n", t);
-	printf("Hola %s \n", t);
+	ft_printf("Hola %s \n", "buenas");
+	printf("Hola %s \n", "buenas");
+
 }
