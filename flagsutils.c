@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/10 12:02:52 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/10 15:35:46 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,16 @@ void	printflags(t_flags flags)
 	ft_putstr_fd("\nwidth: ", 1);
 	ft_putnbr_fd(flags.width, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("dwidth: ", 1);
+	ft_putnbr_fd(ft_widthsort(flags.width), 1);
+	ft_putchar_fd('\n', 1);
 }
+
 void	ft_checkflags(char *str, t_flags *flags)
 {
 	int pos;
 	int num;
+	int dwidth;
 
 	num = 0;
 	pos = 0;

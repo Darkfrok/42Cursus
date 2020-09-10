@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/10 12:04:40 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/10 15:35:03 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ int		ft_printf(const char *str, ...)
 	va_list args;
 	int cont;
 	int pos;
+	int contwidthsort;
 	t_flags	flags;
 
 	pos = 0;
 	cont = 0;
+	contwidthsort = 0;
 	va_start(args, str);
 	while (str[pos] != '\0')
 	{
@@ -40,6 +42,16 @@ int		ft_printf(const char *str, ...)
 			cont++;
 			pos++;
 			ft_checkflags(&str[pos], &flags);
+			contwidthsort = ft_widthsort(flags.width);
+			if (flags.tiene_width = 1)
+			{
+				while (contwidthsort != 0)
+				{
+					pos++;
+					contwidthsort--;
+				}
+				
+			}
 			if (str[pos] == '%')
 			{
 				ft_putchar('%');
@@ -84,7 +96,7 @@ int		ft_printf(const char *str, ...)
 int	main(void)
 {
 
-	ft_printf("Hola %12s \n", "buenas");
+	ft_printf("Hola %999s \n", "buenas");
 	printf("Hola %12s \n", "buenas");
 
 }
