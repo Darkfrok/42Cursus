@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/09 04:14:36 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/10 12:04:40 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int		ft_printf(const char *str, ...)
 int	main(void)
 {
 
-	ft_printf("Hola %s \n", "buenas");
-	printf("Hola %s \n", "buenas");
+	ft_printf("Hola %12s \n", "buenas");
+	printf("Hola %12s \n", "buenas");
 
 }

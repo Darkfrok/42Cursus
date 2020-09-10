@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/09 06:15:54 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/10 12:02:52 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,18 @@ void	printflags(t_flags flags)
 	ft_putnbr_fd(flags.width, 1);
 	ft_putchar_fd('\n', 1);
 }
-int		ft_checkflags(char *str, t_flags *flags)
+void	ft_checkflags(char *str, t_flags *flags)
 {
 	int pos;
+	int num;
 
+	num = 0;
 	pos = 0;
-	if(str[pos] )
+	if (1 == ft_isdigit(str[pos]))
+	{
+		num = 1;
+		flags->width = ft_atoi(str);
+	}
+	if (num == 1)
+		flags->tiene_width = 1;
 }
