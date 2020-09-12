@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/11 16:54:58 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/12 17:52:07 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	ft_checkflags(char *str, t_flags *flags)
 		if (str[pos] == '-')
 		{
 			str++;
+			while (ft_isdigit == 1)
+				pos++;
 		}
 		if(1 == ft_isdigit(str[pos]))
 			num = 2;
