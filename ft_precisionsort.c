@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_widthsort.c                                     :+:      :+:    :+:   */
+/*   ft_precisionsort.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 12:45:16 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/15 15:46:08 by cquezada         ###   ########.fr       */
+/*   Created: 2020/09/15 15:41:26 by cquezada          #+#    #+#             */
+/*   Updated: 2020/09/15 15:48:38 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
  
-int		ft_widthsort(int c)
+int		ft_precisionsort(int c)
 {
-	int width;
+	int precision;
 	int cont;
 
 	cont = 0;
-	width = (int)c;
-	while(width != 0)  
+	precision = (int)c;
+	while(precision != 0)  
    {
-		width = width/10;  
+		precision = precision/10;  
 		cont++;
    }
-   //if (width = '-')
+   //if (precision = '-')
 	//	cont++;
 	return (cont);
 }

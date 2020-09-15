@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/12 17:52:07 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/15 15:52:55 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	printflags(t_flags flags)
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("dwidth: ", 1);
 	ft_putnbr_fd(ft_widthsort(flags.width), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("dprecision: ", 1);
+	ft_putnbr_fd(ft_precisionsort(flags.precision), 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_precision: ", 1);
 	ft_putnbr_fd(flags.tiene_precision, 1);
@@ -64,14 +67,18 @@ void	ft_checkflags(char *str, t_flags *flags)
 	if (str[pos] == '.')
 	{
 		str++;
-		if (str[pos] == '-')
+		/*if (str[pos] == '-')
 		{
 			str++;
 			while (ft_isdigit == 1)
 				pos++;
 		}
+		*/
 		if(1 == ft_isdigit(str[pos]))
+		{
 			num = 2;
+			flags->precision = ft_atoi(str);
+		}
 		if(num == 2)
 			flags->tiene_precision = 1;
 	}

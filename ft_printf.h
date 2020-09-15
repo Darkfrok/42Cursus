@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/11 15:14:16 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/15 15:43:16 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ void	resetflags(t_flags *flags);
 void	printflags(t_flags flags);
 void	ft_checkflags(char *str, t_flags *flags);
 int		ft_widthsort(int c);
+int		ft_precisionsort(int c);
 #endif
