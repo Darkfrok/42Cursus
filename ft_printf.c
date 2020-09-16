@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/15 16:03:00 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/16 13:16:22 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ int		ft_printf(const char *str, ...)
 	int cont;
 	int pos;
 	int contdsort;
+	int contdsortp;
 	t_flags	flags;
 
 	pos = 0;
 	cont = 0;
+	contdsortp = 0;
 	contdsort = 0;
 	va_start(args, str);
 	while (str[pos] != '\0')
@@ -41,27 +43,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			cont++;
 			pos++;
-			ft_checkflags(&str[pos], &flags);
-			//if (ft_isdigit(str[pos]) == 1)
-				//contdsort = ft_widthsort(flags.width);
-			if (str[pos] == '.')
-			{
-				pos++;
-				contdsort = ft_precisionsort(flags.precision);
-			}
-			if (str[pos] == '-')
-				contdsort++;
-			if (flags.tiene_width || flags.tiene_precision == 1)
-			{
-				//ft_putchar_fd('\n', 1);
-				//ft_putnbr_fd(contdsort, 1);
-				while (contdsort != 0)
-				{
-					pos++;
-					contdsort--;
-				}
-				
-			}
+			ft_checkflags(str, &flags, &pos);
 			if (str[pos] == '%')
 			{
 				ft_putchar('%');
@@ -105,8 +87,6 @@ int		ft_printf(const char *str, ...)
 
 int	main(void)
 {
-
-	ft_printf("Hola %.33s \n", "buenas");
+	ft_printf("Hola %.3234s \n", "buenas");
 	printf("Hola %3s \n", "buenas");
-
 }

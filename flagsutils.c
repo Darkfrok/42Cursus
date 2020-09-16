@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/15 15:52:55 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/16 13:16:07 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	printflags(t_flags flags)
 	ft_putnbr_fd(ft_widthsort(flags.width), 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("dprecision: ", 1);
-	ft_putnbr_fd(ft_precisionsort(flags.precision), 1);
+	ft_putnbr_fd(ft_widthsort(flags.precision), 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_precision: ", 1);
 	ft_putnbr_fd(flags.tiene_precision, 1);
@@ -40,46 +40,28 @@ void	printflags(t_flags flags)
 	ft_putchar_fd('\n', 1);
 }
 
-void	ft_checkflags(char *str, t_flags *flags)
+void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 {
-	int pos;
-	int num;
-	int dwidth;
+	int len;
 
-	num = 0;
-	pos = 0;
-	if (str[pos] == '-')
+	len = 0;
+	//printf("debug pos: %i\n", *pos);
+	if (str[*pos] == '-')
+		(*pos)++;
+	if (ft_isdigit(str[*pos]) == 1)
 	{
-		str++;
-		if (1 == ft_isdigit(str[pos]))
-		{
-			num = 1;
-			flags->width = ft_atoi(str);
-		}
-	}
-	if (1 == ft_isdigit(str[pos]))
-		{
-			num = 1;
-			flags->width = ft_atoi(str);
-		}
-	if (num == 1)
 		flags->tiene_width = 1;
-	if (str[pos] == '.')
+		flags->width = ft_atoi(&str[*pos]);
+		len = ft_widthsort(flags->width);
+	}
+	(*pos) = (*pos) + len;
+	len = 0;
+	if (str[*pos] == '.')
 	{
-		str++;
-		/*if (str[pos] == '-')
-		{
-			str++;
-			while (ft_isdigit == 1)
-				pos++;
-		}
-		*/
-		if(1 == ft_isdigit(str[pos]))
-		{
-			num = 2;
-			flags->precision = ft_atoi(str);
-		}
-		if(num == 2)
-			flags->tiene_precision = 1;
+		(*pos)++;
+		flags->tiene_precision = 1;
+		flags->precision = ft_atoi(&str[*pos]);
+		len = ft_widthsort(flags->precision);
+		(*pos) += len;
 	}
 }

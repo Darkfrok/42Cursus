@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/15 15:43:16 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/16 12:49:35 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PRINTF_H
 # include "./Libft/libft.h"
 # include <stdarg.h>
+
 typedef	struct	s_flags
 {
 	int	width;
@@ -32,7 +33,6 @@ void	ft_printx(va_list args);
 void	ft_printpointer(va_list args);
 void	resetflags(t_flags *flags);
 void	printflags(t_flags flags);
-void	ft_checkflags(char *str, t_flags *flags);
+void	ft_checkflags(const char *str, t_flags *flags, int *pos);
 int		ft_widthsort(int c);
-int		ft_precisionsort(int c);
 #endif
