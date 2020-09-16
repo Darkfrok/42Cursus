@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 12:45:16 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/15 15:46:08 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/16 18:33:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int		ft_widthsort(int c)
 
 	cont = 0;
 	width = (int)c;
-	while(width != 0)  
-   {
-		width = width/10;  
+	while(width != 0)
+	{
+		width = width/10;
 		cont++;
-   }
-   //if (width = '-')
-	//	cont++;
+   	}
 	return (cont);
 }

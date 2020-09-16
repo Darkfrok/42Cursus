@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/16 12:49:35 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/16 18:20:27 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef	struct	s_flags
 	int	tiene_width;
 	int tiene_precision;
 	int precision;
+	int tiene_left;
+	int left;
 }				t_flags;
 
 int		ft_printf(const char *str, ...);
