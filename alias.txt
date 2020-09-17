@@ -1,3 +1,4 @@
-alias gcp="gcc *.c Libft/*.c && ./a.out"
+alias gcp="gcc *.c Libft/*.c && ./a.out && rm a.out"
 alias gitautopush="git status && git add . && git status && git commit -m "Autopush" && git push"
-alias normi="norminette -Wall -Werror -Wextra"
+alias normi="norminette"
+alias gcpp="gcc -Wall -Werror -Wextra *.c Libft/*.c && ./a.out && rm a.out"
