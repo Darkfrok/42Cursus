@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/17 18:51:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/22 12:14:41 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	resetflags(t_flags *flags)
 	flags->width = 0;
 	flags->tiene_precision = 0;
 	flags->precision = 0;
-	flags->tiene_left;
-	flags->left;
+	flags->tiene_left = 0;
+	flags->left = 0;
+	flags->tiene_zero = 0;
+	flags->zero = 0;
 }
 
 void	printflags(t_flags flags)
 {
-	ft_putstr_fd("tiene_width: ", 1);
+	ft_putstr_fd("\ntiene_width: ", 1);
 	ft_putnbr_fd(flags.tiene_width, 1);
 	ft_putstr_fd("\nwidth: ", 1);
 	ft_putnbr_fd(flags.width, 1);
@@ -40,6 +42,16 @@ void	printflags(t_flags flags)
 	ft_putstr_fd("\nprecision: ", 1);
 	ft_putnbr_fd(flags.precision, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("tiene_left: ", 1);
+	ft_putnbr_fd(flags.tiene_left, 1);
+	ft_putstr_fd("\nleft: ", 1);
+	ft_putnbr_fd(flags.left, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("tiene_zero: ", 1);
+	ft_putnbr_fd(flags.tiene_zero, 1);
+	ft_putstr_fd("\nzero: ", 1);
+	ft_putnbr_fd(flags.zero, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	ft_checkflags(const char *str, t_flags *flags, int *pos)
@@ -51,7 +63,16 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		(*pos)++;
 		flags->tiene_left = 1;
+		flags->left = ft_atoi(&str[*pos]);
+		len = ft_widthsort(flags->left);
 	}
+	if (str[*pos] == '0')
+	{
+		(*pos)++;
+		flags->tiene_zero = 1;
+	}
+	while (str[*pos] == '0')
+		(*pos)++;
 	if (ft_isdigit(str[*pos]) == 1)
 	{
 		flags->tiene_width = 1;

@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/17 19:12:36 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/22 12:15:56 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
+			printflags(flags);
 		}
 		ft_putchar(str[pos]);
 		pos++;
 		cont++;
 	}
-	printflags(flags);
 	return (0);
 }
 
@@ -92,6 +92,5 @@ int	main(void)
 
 	c = "Christian";
 	t = "tardes";
-	ft_printf("Hola %48.3234s %11s \n", t, c);
-	printf("Hola %3s \n", "buenas");
+	ft_printf("Hola buenas %-58s %-01s \n", t, c);
 }
