@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/22 17:27:50 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/09/28 16:33:56 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ int	main(void)
 
 	c = "Christian";
 	t = "tardes";
-	ft_printf("Hola buenas %s %s \n", t, c);
-	printf("Hola buenas %10s %20s \n", t, c);
+	ft_printf("Hola buenas %.1s %20s \n", t, c);
+	printf("Hola buenas %.1s %20s \n", t, c);
 }
