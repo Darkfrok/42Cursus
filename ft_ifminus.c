@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_ifminus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/03 11:50:21 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/02 16:44:45 by cquezada         ###   ########.fr       */
+/*   Created: 2020/10/15 17:48:43 by cquezada          #+#    #+#             */
+/*   Updated: 2020/10/20 17:39:20 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "Libft/libft.h"
 
-void	ft_printchar(va_list args)
+int if_minus (int a, int b)
 {
 	int c;
 
-	c = va_arg(args, int);
-	ft_putchar_fd(c, 1);
+	c = (a - b);
+	if (c < 0)
+		return(0);
+	else
+		return(c);
 }
+
+
+
+
+
+
+
+//una funcion que reciba 2 numeros, y reste el primero menos el segundo
+//if el numero resultado es negativo, devuelve cero

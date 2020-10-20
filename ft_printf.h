@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/22 10:53:01 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/20 17:33:35 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef	struct	s_flags
 }				t_flags;
 
 int			ft_printf(const char *str, ...);
-void		ft_printstr(va_list args);
+void		ft_printstr(va_list args, t_flags flags);
 void		ft_printchar(va_list args);
 void		ft_printdecimali(va_list args);
 void		ft_printu(va_list args);
@@ -39,4 +39,7 @@ void		resetflags(t_flags *flags);
 void		printflags(t_flags flags);
 void		ft_checkflags(const char *str, t_flags *flags, int *pos);
 int			ft_widthsort(int c);
+size_t 		ft_min(size_t a, size_t b);
+size_t 		ft_max(size_t a, size_t b);
+int 		if_minus (int a, int b);
 #endif

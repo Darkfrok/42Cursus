@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/28 16:08:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/20 17:46:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	resetflags(t_flags *flags)
 	flags->tiene_precision = 0;
 	flags->precision = 0;
 	flags->tiene_left = 0;
-	flags->left = 0;
 	flags->tiene_zero = 0;
 	flags->zero = 0;
 }
@@ -44,9 +43,6 @@ void	printflags(t_flags flags)
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_left: ", 1);
 	ft_putnbr_fd(flags.tiene_left, 1);
-	ft_putstr_fd("\nleft: ", 1);
-	ft_putnbr_fd(flags.left, 1);
-	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_zero: ", 1);
 	ft_putnbr_fd(flags.tiene_zero, 1);
 	ft_putstr_fd("\nzero: ", 1);
@@ -63,8 +59,6 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		(*pos)++;
 		flags->tiene_left = 1;
-		flags->left = ft_atoi(&str[*pos]);
-		len = ft_widthsort(flags->left);
 	}
 	if (str[*pos] == '0')
 	{

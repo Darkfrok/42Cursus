@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/28 16:33:56 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/20 17:47:13 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_printf(const char *str, ...)
 			}
 			if (str[pos] == 's')
 			{
-				ft_printstr(args);
+				ft_printstr(args, flags);
 				pos++;
 			}
 			if (str[pos] == 'c')
@@ -76,7 +76,7 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
-			printflags(flags);
+		//	printflags(flags);
 		}
 		ft_putchar(str[pos]);
 		pos++;
@@ -90,8 +90,8 @@ int	main(void)
 	char *t;
 	char *c;
 
-	c = "Christian";
 	t = "tardes";
-	ft_printf("Hola buenas %.1s %20s \n", t, c);
-	printf("Hola buenas %.1s %20s \n", t, c);
+	c = "XUBUNTU";
+	ft_printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
+	   printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
 }
