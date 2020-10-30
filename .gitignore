@@ -1,4 +1,6 @@
 .DS_Store
 .vscode
 a.out
-*.pdf
+pdfpft_2019/
+pft/
+*.o

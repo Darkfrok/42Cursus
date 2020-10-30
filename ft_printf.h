@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/20 17:33:35 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/30 17:29:08 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef	struct	s_flags
 	int	width;
 	int	tiene_width;
 	int tiene_precision;
-	int precision;
+	size_t	precision;
 	int tiene_left;
 	int left;
 	int tiene_zero;
@@ -41,5 +41,5 @@ void		ft_checkflags(const char *str, t_flags *flags, int *pos);
 int			ft_widthsort(int c);
 size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
-int 		if_minus (int a, int b);
+int			ft_ifminus (int a, int b);
 #endif

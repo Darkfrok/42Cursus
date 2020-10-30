@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/20 17:49:24 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/26 13:48:47 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_printstr(va_list args, t_flags flags)
 		ft_memcpy(temp, s, ft_strlen(s));
 	}
 		
-		w = if_minus(flags.width ,ft_strlen(temp));
+		w = ft_ifminus(flags.width ,ft_strlen(temp));
 		
 		spaces = malloc(w);
 		ft_memset(spaces, ' ',w);

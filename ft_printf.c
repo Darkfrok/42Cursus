@@ -6,16 +6,12 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/20 17:47:13 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/30 17:35:27 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "./Libft/libft.h"
-#include <stdarg.h>
-#include <unistd.h>
+
 #include "./ft_printf.h"
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -27,14 +23,14 @@ int		ft_printf(const char *str, ...)
 	va_list args;
 	int cont;
 	int pos;
-	int contdsort;
-	int contdsortp;
+	//int contdsort;
+	//int contdsortp;
 	t_flags	flags;
 
 	pos = 0;
 	cont = 0;
-	contdsortp = 0;
-	contdsort = 0;
+	//contdsortp = 0;
+	//contdsort = 0;
 	va_start(args, str);
 	while (str[pos] != '\0')
 	{
@@ -85,13 +81,13 @@ int		ft_printf(const char *str, ...)
 	return (0);
 }
 
-int	main(void)
-{
-	char *t;
-	char *c;
+// int	main(void)
+// {
+// 	char *t;
+// 	char *c;
 
-	t = "tardes";
-	c = "XUBUNTU";
-	ft_printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
-	   printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
-}
+// 	t = "tardes";
+// 	c = "XUBUNTU";
+// 	ft_printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
+// 	   printf("Hola buenas %-3.4s %3.4s fin \n", t, c);
+// }

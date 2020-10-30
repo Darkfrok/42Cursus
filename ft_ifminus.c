@@ -6,13 +6,13 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 17:48:43 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/20 17:39:20 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:06:32 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int if_minus (int a, int b)
+int ft_ifminus (int a, int b)
 {
 	int c;
 
