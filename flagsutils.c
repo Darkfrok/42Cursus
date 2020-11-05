@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/05 19:25:37 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/05 20:07:46 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	resetflags(t_flags *flags)
 	flags->tiene_left = 0;
 	flags->tiene_zero = 0;
 	flags->zero = 0;
-	flags->r_count = 0;
 }
 
 void	printflags(t_flags flags)
