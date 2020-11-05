@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/20 17:46:17 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:25:37 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	resetflags(t_flags *flags)
 	flags->tiene_left = 0;
 	flags->tiene_zero = 0;
 	flags->zero = 0;
+	flags->r_count = 0;
 }
 
 void	printflags(t_flags flags)
@@ -48,10 +49,15 @@ void	printflags(t_flags flags)
 	ft_putstr_fd("\nzero: ", 1);
 	ft_putnbr_fd(flags.zero, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\nValor de retorno: ", 1);
+	ft_putnbr_fd(flags.r_count, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 {
+	int temp;
+	int temp2;
 	int len;
 
 	len = 0;
@@ -83,4 +89,6 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		len = ft_widthsort(flags->precision);
 		(*pos) += len;
 	}
+	//temp = flags->precision + flags->width;
+	//flags->r_count = flags->precision + flags->width;
 }

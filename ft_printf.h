@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/30 17:29:08 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/05 04:45:44 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PRINTF_H
 # include "./Libft/libft.h"
 # include <stdarg.h>
+# include <stdio.h>
 
 typedef	struct	s_flags
 {
@@ -25,6 +26,7 @@ typedef	struct	s_flags
 	int left;
 	int tiene_zero;
 	int zero;
+	size_t r_count;
 }				t_flags;
 
 int			ft_printf(const char *str, ...);

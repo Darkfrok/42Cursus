@@ -6,11 +6,11 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2020/10/30 17:36:39 by cquezada         ###   ########.fr        #
+#    Updated: 2020/10/30 18:17:08 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
+NAME = ft_printf
 
 LNAME = libftprintf.a
 
