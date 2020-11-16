@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/05 20:07:46 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 11:27:16 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	printflags(t_flags flags)
 
 void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 {
-	int temp;
-	int temp2;
+	//int temp;
+	//int temp2;
 	int len;
 
 	len = 0;

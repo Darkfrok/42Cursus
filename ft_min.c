@@ -6,17 +6,17 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 16:38:35 by cquezada          #+#    #+#             */
-/*   Updated: 2020/10/02 16:44:44 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 11:29:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t ft_min(size_t a, size_t b)
+size_t	ft_min(size_t a, size_t b)
 {
-    if (a < b)
-        return (a);
-    else
-        return (b);
+	if (a < b)
+		return (a);
+	else
+		return (b);
 }
 
