@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/16 12:20:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 12:56:08 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_printstr(va_list args, t_flags *flags)
 	s = va_arg(args, char*);
 	if ((flags->precision < ft_strlen(s)) && flags->tiene_precision == 1)
 	{
-		temp = malloc(ft_min(flags->precision, ft_strlen(s)) + 1);
+		temp = ft_calloc((ft_min(flags->precision, ft_strlen(s)) + 1), sizeof(char));
 		ft_memcpy(temp, s, flags->precision);
 	}
 	else
