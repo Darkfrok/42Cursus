@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/16 11:27:16 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 13:06:46 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	printflags(t_flags flags)
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_left: ", 1);
 	ft_putnbr_fd(flags.tiene_left, 1);
+	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("tiene_zero: ", 1);
 	ft_putnbr_fd(flags.tiene_zero, 1);
 	ft_putstr_fd("\nzero: ", 1);
