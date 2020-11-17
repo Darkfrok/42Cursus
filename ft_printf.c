@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/16 13:54:46 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 20:34:07 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
-			//printflags(flags);
+			printflags(flags);
 		}
 		else
 		{
@@ -93,6 +93,6 @@ int	main(void)
 	c = "XUBUNTU";
 	cont = ft_printf("hello, %s.", NULL);
 	printf("\nContador : %i\n", cont);
-	cont2 = printf("hello, %s.", NULL);
+	cont2 = printf("hello, %s", NULL);
 	printf("\nContador 2: %i\n", cont2);
 }

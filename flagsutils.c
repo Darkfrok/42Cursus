@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/16 13:06:46 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/16 20:18:39 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	resetflags(t_flags *flags)
 	flags->tiene_left = 0;
 	flags->tiene_zero = 0;
 	flags->zero = 0;
+	flags->if_null = 0;
 }
 
 void	printflags(t_flags flags)
@@ -61,6 +62,11 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	int len;
 
 	len = 0;
+	if (str[*pos] == NULL)
+	{
+		(*pos)++;
+		flags->if_null = 1;
+	}
 	if (str[*pos] == '-')
 	{
 		(*pos)++;
