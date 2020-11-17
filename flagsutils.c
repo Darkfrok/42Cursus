@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 19:01:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 19:26:32 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,7 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		{
 			(*pos)++;
 		}
-		
-		//len = ft_digitcount(flags->width);
 	}
-	//(*pos) = (*pos) + len;
 	len = 0;
 	if (str[*pos] == '.')
 	{
@@ -93,9 +90,5 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		{
 			(*pos)++;
 		}
-		//len = ft_digitcount(flags->precision);
-		//(*pos) += len;
 	}
-	//temp = flags->precision + flags->width;
-	//flags->r_count = flags->precision + flags->width;
 }
