@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/02 16:38:35 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 18:25:21 by cquezada         ###   ########.fr       */
+/*   Created: 2020/11/17 18:29:29 by cquezada          #+#    #+#             */
+/*   Updated: 2020/11/17 18:57:45 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
-size_t	ft_max(size_t a, size_t b)
+void    ft_putchar(char c)
 {
-	if (a > b)
-		return (a);
-	else
-		return (b);
+	write(1, &c, 1);
 }
-
-//coge dos numeros (a) y (b) y devuelve (a) si es mayor que (b)

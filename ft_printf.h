@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 10:07:44 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 19:04:00 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 # include "./Libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
+# include <unistd.h>
 
 typedef	struct	s_flags
 {
 	int	width;
-	int	tiene_width;
-	int tiene_precision;
+	int	has_width;
+	int has_precision;
 	size_t	precision;
-	int tiene_left;
+	int has_left;
 	int left;
-	int tiene_zero;
+	int has_zero;
 	int zero;
 	size_t r_count;
 }				t_flags;
@@ -40,8 +41,9 @@ void		ft_printpointer(va_list args);
 void		resetflags(t_flags *flags);
 void		printflags(t_flags flags);
 void		ft_checkflags(const char *str, t_flags *flags, int *pos);
-int			ft_widthsort(int c);
+int			ft_digitcount(int c);
 size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
-int			ft_ifminus (int a, int b);
+int			ft_positivediff(int a, int b);
+void		ft_putchar(char c);
 #endif

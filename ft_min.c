@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 16:38:35 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/16 11:29:17 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 18:25:46 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,4 @@ size_t	ft_min(size_t a, size_t b)
 		return (b);
 }
 
+//coge dos numeros (a) y (b) y devuelve (a) si es menor que (b)

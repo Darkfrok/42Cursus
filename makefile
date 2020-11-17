@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2020/10/30 18:17:08 by cquezada         ###   ########.fr        #
+#    Updated: 2020/11/17 19:08:20 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ ft_printstr.c \
 ft_printchar.c \
 ft_printdecimali.c \
 ft_printu.c \
-ft_widthsort.c \
+ft_digitcount.c \
 ft_min.c \
 ft_max.c \
-ft_ifminus.c \
+ft_positivediff.c \
 flagsutils.c \
 ft_printxm.c \
 ft_printx.c \

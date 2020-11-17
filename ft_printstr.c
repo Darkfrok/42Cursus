@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 13:47:29 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 19:04:09 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	ft_printstr(va_list args, t_flags *flags)
 	if (s == NULL)
 	{
 		temp = ft_strjoin("(null)", "");
-		if (flags->tiene_precision == 1)
+		if (flags->has_precision == 1)
 		{
 			temp[flags->precision] = '\0';
 		}
 	}
-	else if ((flags->precision < ft_strlen(s)) && flags->tiene_precision == 1)
+	else if ((flags->precision < ft_strlen(s)) && flags->has_precision == 1)
 	{
 		temp = ft_calloc((ft_min(flags->precision, ft_strlen(s)) + 1),
 		sizeof(char));
@@ -42,16 +42,16 @@ void	ft_printstr(va_list args, t_flags *flags)
 		ft_memcpy(temp, s, ft_strlen(s));
 		temp[ft_strlen(s)] = '\0';
 	}
-	if (flags->tiene_width == 1 && flags->tiene_left == 0)
+	if (flags->has_width == 1 && flags->has_left == 0)
 	{
-		w = ft_ifminus(flags->width, ft_strlen(temp));
+		w = ft_positivediff(flags->width, ft_strlen(temp));
 		spaces = ft_calloc(w, sizeof(char));
 		ft_memset(spaces, ' ', w);
 		temp2 = ft_strjoin(spaces, temp);
 	}
-	else if (flags->tiene_width == 1 && flags->tiene_left == 1)
+	else if (flags->has_width == 1 && flags->has_left == 1)
 	{
-		w = ft_ifminus(flags->width, ft_strlen(temp));
+		w = ft_positivediff(flags->width, ft_strlen(temp));
 		spaces = ft_calloc(w, sizeof(char));
 		ft_memset(spaces, ' ', w);
 		temp2 = ft_strjoin(temp, spaces);
