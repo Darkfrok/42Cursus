@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 10:12:44 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 13:18:10 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,26 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		flags->tiene_width = 1;
 		flags->width = ft_atoi(&str[*pos]);
-		len = ft_widthsort(flags->width);
+		while (str[*pos] != 's' && str[*pos] != '.')
+		{
+			(*pos)++;
+		}
+		
+		//len = ft_widthsort(flags->width);
 	}
-	(*pos) = (*pos) + len;
+	//(*pos) = (*pos) + len;
 	len = 0;
 	if (str[*pos] == '.')
 	{
 		(*pos)++;
 		flags->tiene_precision = 1;
 		flags->precision = ft_atoi(&str[*pos]);
-		len = ft_widthsort(flags->precision);
-		(*pos) += len;
+		while (str[*pos] != 's')
+		{
+			(*pos)++;
+		}
+		//len = ft_widthsort(flags->precision);
+		//(*pos) += len;
 	}
 	//temp = flags->precision + flags->width;
 	//flags->r_count = flags->precision + flags->width;

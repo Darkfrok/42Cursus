@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 12:19:29 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/17 13:17:06 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
-			//printflags(flags);
+		//	printflags(flags);
 		}
 		else
 		{
@@ -83,16 +83,16 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-int	main(void)
-{
-	char t[] = "tardes";
-	char *c;
-	int cont;
-	int cont2;
+// int	main(void)
+// {
+// 	char t[] = "tardes";
+// 	char *c;
+// 	int cont;
+// 	int cont2;
 
-	c = "XUBUNTU";
-	cont = ft_printf("%.3s%.2s", "holla", "bitch");
-	printf("\nContador : %i\n", cont);
-	cont2 = printf("%.3s%.2s", "holla", "bitch");
-	printf("\nContador 2: %i\n", cont2);
-}
+// 	c = "XUBUNTU";
+// 	cont = ft_printf("%.03s", "hello");
+// 	printf("\nContador : %i\n", cont);
+// 	cont2 = printf("%.03s", "hello");
+// 	printf("\nContador 2: %i\n", cont2);
+// }
