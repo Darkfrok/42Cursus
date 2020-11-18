@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 19:04:09 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/18 12:18:15 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_printstr(va_list args, t_flags *flags)
 	{
 		w = ft_positivediff(flags->width, ft_strlen(temp));
 		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, ' ', w);
+		ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', w);
 		temp2 = ft_strjoin(spaces, temp);
 	}
 	else if (flags->has_width == 1 && flags->has_left == 1)
