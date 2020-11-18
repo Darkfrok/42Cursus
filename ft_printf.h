@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 19:04:00 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/18 10:50:53 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ int			ft_digitcount(int c);
 size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
 int			ft_positivediff(int a, int b);
-void		ft_putchar(char c);
 #endif

@@ -6,17 +6,12 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 18:34:09 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/18 10:53:02 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "./ft_printf.h"
-
-// void	ft_putchar(char c)
-// {
-// 	write(1, &c, 1);
-// }
 
 int		ft_printf(const char *str, ...)
 {
@@ -36,7 +31,7 @@ int		ft_printf(const char *str, ...)
 			ft_checkflags(str, &flags, &pos);
 			if (str[pos] == '%')
 			{
-				ft_putchar('%');
+				ft_putchar_fd('%', 1);
 				flags.r_count++;
 				pos++;
 			}
@@ -66,11 +61,11 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
-			printflags(flags);
+			//printflags(flags);
 		}
 		else
 		{
-			ft_putchar(str[pos]);
+			ft_putchar_fd(str[pos], 1);
 			pos++;
 			flags.r_count++;
 		}
@@ -78,16 +73,16 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-int	main(void)
-{
-	char t[] = "tardes";
-	char *c;
-	int cont;
-	int cont2;
+// int	main(void)
+// {
+// 	char t[] = "tardes";
+// 	char *c;
+// 	int cont;
+// 	int cont2;
 
-	c = "XUBUNTU";
-	cont = ft_printf("%-020s", c);
-	printf("\nContador : %i\n", cont);
-	cont2 = printf("%-020s", c);
-	printf("\nContador 2: %i\n", cont2);
-}
+// 	c = "XUBUNTU";
+// 	cont = ft_printf("%-020s", c);
+// 	printf("\nContador : %i\n", cont);
+// 	cont2 = printf("%-020s", c);
+// 	printf("\nContador 2: %i\n", cont2);
+// }
