@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/18 12:17:35 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/18 13:08:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,16 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-// int	main(void)
-// {
-// 	char t[] = "tardes";
-// 	char *c;
-// 	int cont;
-// 	int cont2;
+int	main(void)
+{
+	char t = 't';
+	char c;
+	int cont;
+	int cont2;
 
-// 	c = "XUBUNTU";
-// 	cont = ft_printf("%09s", c);
-// 	printf("\nContador : %i\n", cont);
-// 	cont2 = printf("%09s", c);
-// 	printf("\nContador 2: %i\n", cont2);
-// }
+	c = 'X';
+	cont = ft_printf("%c%c", c, t);
+	printf("\nContador : %i\n", cont);
+	cont2 = printf("%c%-10c", c, t);
+	printf("\nContador 2: %i\n", cont2);
+}
