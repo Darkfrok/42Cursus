@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/18 13:08:17 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/19 13:51:07 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			pos++;
 			ft_checkflags(str, &flags, &pos);
+			//printflags(flags);
 			if (str[pos] == '%')
 			{
 				ft_putchar_fd('%', 1);
@@ -42,8 +43,7 @@ int		ft_printf(const char *str, ...)
 			}
 			else if (str[pos] == 'c')
 			{
-				ft_printchar(args);
-				flags.r_count++;
+				ft_printchar(args, &flags);
 				pos++;
 			}
 			else if (str[pos] == ('d') || str[pos] == ('i'))
@@ -61,7 +61,6 @@ int		ft_printf(const char *str, ...)
 				ft_printxm(args);
 				pos++;
 			}
-			//printflags(flags);
 		}
 		else
 		{
@@ -73,16 +72,17 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-int	main(void)
-{
-	char t = 't';
-	char c;
-	int cont;
-	int cont2;
+// int	main(void)
+// {
+// 	char t;
+// 	char c;
+// 	int cont;
+// 	int cont2;
 
-	c = 'X';
-	cont = ft_printf("%c%c", c, t);
-	printf("\nContador : %i\n", cont);
-	cont2 = printf("%c%-10c", c, t);
-	printf("\nContador 2: %i\n", cont2);
-}
+// 	t = 't';
+// 	c = 'X';
+// 	cont = ft_printf("%3c", c, t);
+// 	printf("\nContador : %i\n", cont);
+// 	cont2 = printf("%-2c", c, t);
+// 	printf("\nContador 2: %i\n", cont2);
+// }

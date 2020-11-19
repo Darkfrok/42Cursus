@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/18 10:50:53 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/19 12:16:01 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef	struct	s_flags
 
 int			ft_printf(const char *str, ...);
 void		ft_printstr(va_list args, t_flags *flags);
-void		ft_printchar(va_list args);
+void		ft_printchar(va_list args, t_flags *flags);
 void		ft_printdecimali(va_list args);
 void		ft_printu(va_list args);
 void		ft_printxm(va_list args);
