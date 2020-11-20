@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/19 13:51:07 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/20 12:06:58 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int		ft_printf(const char *str, ...)
 
 // 	t = 't';
 // 	c = 'X';
-// 	cont = ft_printf("%3c", c, t);
-// 	printf("\nContador : %i\n", cont);
-// 	cont2 = printf("%-2c", c, t);
-// 	printf("\nContador 2: %i\n", cont2);
+// 	cont = ft_printf("%3c %c", c, t);
+// 	printf("\nContador:    %i\n", cont);
+// 	cont2 = printf("%3c %c", c, t);
+// 	printf("\nContador 2:  %i\n", cont2);
 // }

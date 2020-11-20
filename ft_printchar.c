@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 11:50:21 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/19 13:55:28 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/20 14:04:25 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,21 @@ void	ft_printchar(va_list args, t_flags *flags)
 	char *temp;
 	char *temp2;
 	char *spaces;
-	char c;
+	int c;
 
 	c = va_arg(args, int);
 
-	//printf("Hasta aqui-2\n");
-	//printf("Hasta aqui-1\n");
+	// printf("Hasta aqui-2\n");
+	// printf("Hasta aqui-1\n");
 	temp = ft_calloc(2, sizeof(char));
-	temp[0] = c;
+	if (c == '\0')
+	{
+		//ft_putchar_fd('\0', 1);
+		temp[0] = '\0';
+		flags->r_count++;
+	}
+	else
+		temp[0] = c;
 	//printf("Hasta aqui0\n");
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{
