@@ -72,17 +72,17 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-// int	main(void)
-// {
-// 	char t;
-// 	char c;
-// 	int cont;
-// 	int cont2;
+int	main(void)
+{
+	char t;
+	char c;
+	int cont;
+	int cont2;
 
-// 	t = 't';
-// 	c = 'X';
-// 	cont = ft_printf("%3c %c", c, t);
-// 	printf("\nContador:    %i\n", cont);
-// 	cont2 = printf("%3c %c", c, t);
-// 	printf("\nContador 2:  %i\n", cont2);
-// }
+	t = 't';
+	c = 'X';
+	cont = ft_printf("%3c %c", c, t);
+	printf("\nContador:    %i\n", cont);
+	cont2 = printf("%3c %c", c, t);
+	printf("\nContador 2:  %i\n", cont2);
+}
