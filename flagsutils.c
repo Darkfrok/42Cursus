@@ -86,7 +86,7 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		(*pos)++;
 		flags->has_precision = 1;
 		flags->precision = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's')
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
 		{
 			(*pos)++;
 		}
