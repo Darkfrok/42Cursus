@@ -6,12 +6,11 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2020/09/17 18:16:47 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:29:32 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include "Libft/libft.h"
+#include "ft_printf.h"
 
 void	ft_printdecimali(va_list args)
 {

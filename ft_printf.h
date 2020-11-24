@@ -6,13 +6,13 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/19 12:16:01 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:27:04 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
-# include "./Libft/libft.h"
+# include "./libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
