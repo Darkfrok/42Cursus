@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/24 16:19:43 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/11/24 17:48:43 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			pos++;
 			ft_checkflags(str, &flags, &pos);
-			//printflags(flags);
+		//	printflags(flags);
 			if (str[pos] == '%')
 			{
 				ft_putchar_fd('%', 1);
@@ -80,8 +80,8 @@ int	main(void)
 
 	t = 70;
 	c = 60;
-	cont = ft_printf("%d %20d", c, t);
+	cont = ft_printf("%d %.20d", c, t);
 	printf("\nContador:    %i\n", cont);
-	cont2 = printf("%d %20d", c, t);
+	cont2 = printf("%d %.20d", c, t);
 	printf("\nContador 2:  %i\n", cont2);
 }
