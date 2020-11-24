@@ -75,7 +75,7 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		flags->has_width = 1;
 		flags->width = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c')
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
 		{
 			(*pos)++;
 		}

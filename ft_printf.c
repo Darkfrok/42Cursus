@@ -47,7 +47,7 @@ int		ft_printf(const char *str, ...)
 			}
 			else if (str[pos] == ('d') || str[pos] == ('i'))
 			{
-				ft_printdecimali(args);
+				ft_printdecimali(args, &flags);
 				pos++;
 			}
 			else if (str[pos] == 'u')
@@ -71,17 +71,17 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-int	main(void)
-{
-	char t;
-	char c;
-	int cont;
-	int cont2;
+// int	main(void)
+// {
+// 	int t;
+// 	int c;
+// 	int cont;
+// 	int cont2;
 
-	t = 't';
-	c = 'X';
-	cont = ft_printf("%3c %c", c, t);
-	printf("\nContador:    %i\n", cont);
-	cont2 = printf("%3c %c", c, t);
-	printf("\nContador 2:  %i\n", cont2);
-}
+// 	t = 70;
+// 	c = 60;
+// 	cont = ft_printf("%d %20d", c, t);
+// 	printf("\nContador:    %i\n", cont);
+// 	cont2 = printf("%d %20d", c, t);
+// 	printf("\nContador 2:  %i\n", cont2);
+// }

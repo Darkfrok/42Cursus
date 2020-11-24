@@ -33,7 +33,7 @@ typedef	struct	s_flags
 int			ft_printf(const char *str, ...);
 void		ft_printstr(va_list args, t_flags *flags);
 void		ft_printchar(va_list args, t_flags *flags);
-void		ft_printdecimali(va_list args);
+void		ft_printdecimali(va_list args, t_flags *flags);
 void		ft_printu(va_list args);
 void		ft_printxm(va_list args);
 void		ft_printx(va_list args);
