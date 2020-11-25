@@ -16,7 +16,9 @@ char *sustituteminus(char *str, t_flags *flags)
 {
 int		pos;
 int 	len;
+char	*temp;
 
+temp = str;
 pos = 0 ;
 len = ft_strlen(str);
 while (str[pos] != '\0')
@@ -26,7 +28,7 @@ while (str[pos] != '\0')
 		if (len <= flags->has_precision)
 			str[pos] = '0';
 		else
-			str++;
+			str[pos] = '';
 		str[0] = '-';
 	}
 	pos++;
