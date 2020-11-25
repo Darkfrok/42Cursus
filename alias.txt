@@ -2,4 +2,4 @@ alias gcp="gcc *.c Libft/*.c && ./a.out && rm a.out"
 alias gitautopush="git status && git add . && git status && git commit -m "Autopush" && git push"
 alias normi="norminette"
 alias gcpp="gcc -Wall -Werror -Wextra *.c Libft/*.c && ./a.out && rm a.out"
-alias mk="cd pft_2019/ && make re && ./test d && cp pft_2019/results.txt Resources"
+alias mk="cd pft_2019/ && make re && ./test d && cp pft_2019/results.txt Resources"pull

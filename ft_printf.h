@@ -45,4 +45,5 @@ int			ft_digitcount(int c);
 size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
 int			ft_positivediff(int a, int b);
+char 		*sustituteminus(char *str, t_flags *flags);
 #endif
