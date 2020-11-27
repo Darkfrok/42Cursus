@@ -12,23 +12,16 @@
 
 #include "ft_printf.h"
 
-char *sustituteminus(char *str, t_flags *flags)
+char *sustituteminus(char *str)
 {
 int		pos;
-int 	len;
-char	*temp;
 
-temp = str;
 pos = 0 ;
-len = ft_strlen(str);
 while (str[pos] != '\0')
 {
-	if (str[pos] == '-') 
+	if (str[pos] == '-')
 	{
-		if (len <= flags->has_precision)
-			str[pos] = '0';
-		else
-			str[pos] = '';
+		str[pos] = '0';
 		str[0] = '-';
 	}
 	pos++;
@@ -51,11 +44,12 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	if (flags->has_precision == 1)
 	{
 		w = ft_positivediff(flags->precision, ft_strlen(s));
-		if (d < 0)
+		if (d < 0 && flags->precision > ft_strlen(s))
 			w++;
 		spaces = ft_calloc(w, sizeof(char));
 		ft_memset(spaces, '0', w);
 		temp = ft_strjoin(spaces, s);
+		//printf("temp: %s\n", temp);
 	}
 	// if ((flags->precision < ft_strlen(s)) && flags->has_precision == 1)
 	// {
@@ -69,7 +63,7 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 		ft_memcpy(temp, s, ft_strlen(s));
 		temp[ft_strlen(s)] = '\0';
 	}
-	sustituteminus(temp, flags);
+		sustituteminus(temp);
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{		
 		w = ft_positivediff(flags->width, ft_strlen(temp));
@@ -81,11 +75,13 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	{
 		w = ft_positivediff(flags->width, ft_strlen(temp));
 		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, ' ', w);
+		ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', w);
 		temp2 = ft_strjoin(temp, spaces);
 	}
 	else
 		temp2 = ft_strjoin("", temp);
+	if (flags->has_zero == 1)
+		sustituteminus(temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
