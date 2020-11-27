@@ -80,8 +80,8 @@ int		ft_printf(const char *str, ...)
 
 // 	t = 70;
 // 	c = 60;
-// 	cont = ft_printf("%.4d", -2372);
+// 	cont = ft_printf("%08.5d", 34);
 // 	printf("\nContador:    %i\n", cont);
-// 	cont2 = printf("%.4d", -2372);
+// 	cont2 = printf("%08.5d", 34);
 // 	printf("\nContador 2:  %i\n", cont2);
 // }
