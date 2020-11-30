@@ -62,7 +62,10 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	{		
 		w = ft_positivediff(flags->width, ft_strlen(temp));
 		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, flags->has_zero == 1 ? ' ' : '0', w);
+		if (flags->precision <= flags ->width)
+			ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', w);
+		else
+			ft_memset(spaces, flags->has_zero == 1 ? ' ' : '0', w);
 		temp2 = ft_strjoin(spaces, temp);
 	}
 	else if (flags->has_width == 1 && flags->has_left == 1)
