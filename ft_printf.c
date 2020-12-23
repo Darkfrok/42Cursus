@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2020/12/22 18:08:55 by cquezada         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:02:36 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ int	main(void)
 
 	t = 70;
 	c = 60;
-	  cont = ft_printf("%010.5d", -216);
+	  cont = ft_printf("%0-10.5d", -216);
 	printf("\nContador:    %i\n", cont);
-		cont2 = printf("%010.5d", -216);
+		cont2 = printf("%0-10.5d", -216);
 	printf("\nContador 2:  %i\n", cont2);
 }
