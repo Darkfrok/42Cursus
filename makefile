@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2020/11/17 19:08:20 by cquezada         ###   ########.fr        #
+#    Updated: 2020/12/30 17:14:39 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,42 +27,42 @@ flagsutils.c \
 ft_printxm.c \
 ft_printx.c \
 
-OBJFOLDER = Libft/
+OBJFOLDER = libft/
 
-LIBSOURCE = Libft/ft_atoi.c \
-			Libft/ft_isalpha.c \
-			Libft/ft_itoa.c \
-			Libft/ft_memcpy.c \
-			Libft/ft_putendl_fd.c \
-			Libft/ft_strchr.c \
-			Libft/ft_strlcat.c \
-			Libft/ft_strncmp.c \
-			Libft/ft_substr.c \
-			Libft/ft_bzero.c \
-			Libft/ft_isascii.c \
-			Libft/ft_memccpy.c \
-			Libft/ft_memmove.c \
-			Libft/ft_putnbr_fd.c \
-			Libft/ft_strlcpy.c \
-			Libft/ft_strnstr.c \
-			Libft/ft_tolower.c \
-			Libft/ft_calloc.c \
-			Libft/ft_isdigit.c \
-			Libft/ft_memchr.c \
-			Libft/ft_memset.c\
-			Libft/ft_putstr_fd.c \
-			Libft/ft_strdup.c \
-			Libft/ft_strlen.c \
-			Libft/ft_strrchr.c \
-			Libft/ft_toupper.c \
-			Libft/ft_isalnum.c \
-			Libft/ft_isprint.c \
-			Libft/ft_memcmp.c \
-			Libft/ft_putchar_fd.c \
-			Libft/ft_split.c \
-			Libft/ft_strjoin.c \
-			Libft/ft_strmapi.c \
-			Libft/ft_strtrim.c 
+LIBSOURCE = libft/ft_atoi.c \
+			libft/ft_isalpha.c \
+			libft/ft_itoa.c \
+			libft/ft_memcpy.c \
+			libft/ft_putendl_fd.c \
+			libft/ft_strchr.c \
+			libft/ft_strlcat.c \
+			libft/ft_strncmp.c \
+			libft/ft_substr.c \
+			libft/ft_bzero.c \
+			libft/ft_isascii.c \
+			libft/ft_memccpy.c \
+			libft/ft_memmove.c \
+			libft/ft_putnbr_fd.c \
+			libft/ft_strlcpy.c \
+			libft/ft_strnstr.c \
+			libft/ft_tolower.c \
+			libft/ft_calloc.c \
+			libft/ft_isdigit.c \
+			libft/ft_memchr.c \
+			libft/ft_memset.c\
+			libft/ft_putstr_fd.c \
+			libft/ft_strdup.c \
+			libft/ft_strlen.c \
+			libft/ft_strrchr.c \
+			libft/ft_toupper.c \
+			libft/ft_isalnum.c \
+			libft/ft_isprint.c \
+			libft/ft_memcmp.c \
+			libft/ft_putchar_fd.c \
+			libft/ft_split.c \
+			libft/ft_strjoin.c \
+			libft/ft_strmapi.c \
+			libft/ft_strtrim.c 
 
 OBJ = $(SOURCE:.c=.o)
 
@@ -77,7 +77,7 @@ all: $(NAME)
 # Rule to build your object files and link them into a binary
 $(NAME):
 	@gcc $(CFLAGS) $(LFLAGS) $(LIBSOURCE)
-	@mv -f *.o Libft
+	@mv -f *.o libft
 	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
 	@ar rc $(LNAME) $(OBJ) $(LIBOBJ)
 	@ranlib $(LNAME)
@@ -85,7 +85,7 @@ $(NAME):
 
 # Rule to remove object files
 clean:
-	@rm -f $(LIBOBJ) $(LBONUSSRC) $(OBJ) $(LIBOBJ) Libft/*.o
+	@rm -f $(LIBOBJ) $(LBONUSSRC) $(OBJ) $(LIBOBJ) libft/*.o
 	@echo "Cleaned objects successfully"
 
 # Rule to remove binary, calls the 'clean' rule first
@@ -101,7 +101,7 @@ test: fclean
 	@echo "Enabling debug\n"
 	@sed -i '' 's/debug = 0/debug = 1/g' ft_printf.c
 	@echo "Testing...\n"
-	@gcc -g  *.c ./Libft/*.c ./test/main.c
+	@gcc -g  *.c ./libft/*.c ./test/main.c
 	@echo "\ntest result:"
 	@./a.out
 	@echo "\n"
