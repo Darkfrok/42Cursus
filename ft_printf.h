@@ -19,7 +19,7 @@
 
 typedef	struct	s_flags
 {
-	int	width;
+	size_t	width;
 	int	has_width;
 	int has_precision;
 	size_t	precision;

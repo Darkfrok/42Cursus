@@ -28,7 +28,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			pos++;
 			ft_checkflags(str, &flags, &pos);
-			printflags(flags);
+			//printflags(flags);
 			if (str[pos] == '%')
 			{
 				ft_putchar_fd('%', 1);
@@ -80,8 +80,8 @@ int	main(void)
 
 	t = 70;
 	c = 60;
-	  cont = ft_printf("%-5.d", 0);
+	  cont = ft_printf("%08.5d", 34);
 	printf("\nContador:    %i\n", cont);
-		cont2 = printf("%-5.d", 0);
+		cont2 = printf("%08.5d", 34);
 	printf("\nContador 2:  %i\n", cont2);
 }

@@ -16,7 +16,7 @@
 void	ft_printchar(va_list args, t_flags *flags)
 {
 	char	c;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	c = va_arg(args, int);
