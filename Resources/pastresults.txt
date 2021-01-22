@@ -7,57 +7,48 @@ WARNING: The return values reported here may be bugged on some systems.
           the function output--only the reported return value.
 
 
-Test 285 (d_prec0val0_basic) : FAILED.
-    First line of code: {return test("%.0d", 0);}
-      expected return value : 0
-      your return value     : 1
-      expected output : ""
-      your output     : "0"
-      expected (nonprintable as hex) : ""
-      actual   (nonprintable as hex) : "0"
+Test 223 (d_width_neg_fits) : FAILED.
+    First line of code: {return test("%7d", -14);}
+      expected return value : 7
+      your return value     : 7
+      expected output : "    -14"
+      your output     : "-   014"
+      expected (nonprintable as hex) : "    -14"
+      actual   (nonprintable as hex) : "-   014"
 
-Test 286 (d_prec0val0_implicit) : FAILED.
-    First line of code: {return test("%.d", 0);}
-      expected return value : 0
-      your return value     : 1
-      expected output : ""
-      your output     : "0"
-      expected (nonprintable as hex) : ""
-      actual   (nonprintable as hex) : "0"
+Test 250 (d_prec_width_fit_fit_neg) : FAILED.
+    First line of code: {return test("%10.5d", -216);}
+      expected return value : 11
+      your return value     : 11
+      expected output : "    -00216"
+      your output     : "-   000216"
+      expected (nonprintable as hex) : "    -00216"
+      actual   (nonprintable as hex) : "-   000216"
 
-Test 287 (d_prec0val0_w) : FAILED.
-    First line of code: {return test("%5.0d", 0);}
-      expected return value : 5
-      your return value     : 5
-      expected output : "     "
-      your output     : "    0"
-      expected (nonprintable as hex) : "     "
-      actual   (nonprintable as hex) : "    0"
+Test 253 (d_prec_width_nofit_fit_neg) : FAILED.
+    First line of code: {return test("%8.3d", -8473);}
+      expected return value : 8
+      your return value     : 8
+      expected output : "   -8473"
+      your output     : "-  08473"
+      expected (nonprintable as hex) : "   -8473"
+      actual   (nonprintable as hex) : "-  08473"
 
-Test 288 (d_prec0val0_w_impl) : FAILED.
-    First line of code: {return test("%5.d", 0);}
-      expected return value : 5
-      your return value     : 5
-      expected output : "     "
-      your output     : "    0"
-      expected (nonprintable as hex) : "     "
-      actual   (nonprintable as hex) : "    0"
+Test 268 (d_prec_width_ff_neg_zp) : FAILED.
+    First line of code: {return test("%010.5d", -216);}
+      expected return value : 11
+      your return value     : 11
+      expected output : "    -00216"
+      your output     : "-   000216"
+      expected (nonprintable as hex) : "    -00216"
+      actual   (nonprintable as hex) : "-   000216"
 
-Test 289 (d_prec0val0_wlj) : FAILED.
-    First line of code: {return test("%-5.0d", 0);}
-      expected return value : 5
-      your return value     : 5
-      expected output : "     "
-      your output     : "0    "
-      expected (nonprintable as hex) : "     "
-      actual   (nonprintable as hex) : "0    "
-
-Test 290 (d_prec0val0_wlj_impl) : FAILED.
-    First line of code: {return test("%-5.d", 0);}
-      expected return value : 5
-      your return value     : 5
-      expected output : "     "
-      your output     : "0    "
-      expected (nonprintable as hex) : "     "
-      actual   (nonprintable as hex) : "0    "
+Test 271 (d_prec_width_nf_neg_zp) : FAILED.
+    First line of code: {return test("%08.3d", -8473);}
+      expected return value : 8
+      your return value     : 8
+      expected output : "   -8473"
+      your output     : "-  08473"
+      expected (nonprintable as hex) : "   -8473"
+      actual   (nonprintable as hex) : "-  08473"
 
