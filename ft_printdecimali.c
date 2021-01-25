@@ -11,7 +11,19 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+void	auxdecimali1(t_flags *flags, int *d, char **temp,
+char **spaces, char **temp2)
+{
+	*d = ft_positivediff(flags->width, ft_strlen(*temp));
+	*(spaces) = ft_calloc(*d, sizeof(char));
+	if ((flags->precision >= flags->width && flags->has_zero == 1) ||
+	(flags->has_zero == 1 && flags->has_width == 1 &&
+	flags->has_precision == 0))
+		ft_memset(*(spaces), '0', *d);
+	else
+		ft_memset(*(spaces), ' ', *d);
+	*(temp2) = ft_strjoin(*(spaces), *(temp));
+}
 char	*sustituteminus(char *str)
 {
 	int pos;
@@ -36,7 +48,6 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	char	*temp;
 	char	*spaces;
 	char	*temp2;
-	int		w;
 
 	d = va_arg(args, int);
 	if (d == 0 && flags->has_precision == 1)
@@ -46,13 +57,14 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	}
 	else
 		s = ft_itoa(d);
+		temp2 = NULL;
 	if (flags->has_precision == 1)
 	{
-		w = ft_positivediff(flags->precision, ft_strlen(s));
-		if (d < 0 && flags->precision > ft_strlen(s))
-			w++;
-		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, '0', w);
+		d = ft_positivediff(flags->precision, ft_strlen(s));
+		if (s[0] == '-' && flags->precision > ft_strlen(s))
+			d++;
+		spaces = ft_calloc(d, sizeof(char));
+		ft_memset(spaces, '0', d);
 		temp = ft_strjoin(spaces, s);
 	}
 	else
@@ -63,24 +75,15 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	}
 	sustituteminus(temp);
 	if (flags->has_width == 1 && flags->has_left == 0)
-	{
-		w = ft_positivediff(flags->width, ft_strlen(temp));
-		spaces = ft_calloc(w, sizeof(char));
-		if ((flags->precision >= flags->width && flags->has_zero == 1) ||
-		(flags->has_zero == 1 && flags->has_width == 1 && flags->has_precision == 0))
-			ft_memset(spaces, '0', w);
-		else
-			ft_memset(spaces, ' ', w);
-		temp2 = ft_strjoin(spaces, temp);
-	}
+		auxdecimali1(flags, &d, &temp, &spaces, &temp2);
 	else if (flags->has_width == 1 && flags->has_left == 1)
 	{
-		w = ft_positivediff(flags->width, ft_strlen(temp));
-		spaces = ft_calloc(w, sizeof(char));
+		d = ft_positivediff(flags->width, ft_strlen(temp));
+		spaces = ft_calloc(d, sizeof(char));
 		if (flags->precision < flags->width)
-			ft_memset(spaces, ' ', w);
+			ft_memset(spaces, ' ', d);
 		else
-			ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', w);
+			ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', d);
 		temp2 = ft_strjoin(temp, spaces);
 	}
 	else
