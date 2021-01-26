@@ -18,7 +18,6 @@ void	ft_printstr(va_list args, t_flags *flags)
 	char	*s;
 	char	*temp;
 	char	*temp2;
-	char	*spaces;
 	int w;
 
 	s = va_arg(args, char*);
@@ -45,16 +44,16 @@ void	ft_printstr(va_list args, t_flags *flags)
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{
 		w = ft_positivediff(flags->width, ft_strlen(temp));
-		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, flags->has_zero == 1 ? '0' : ' ', w);
-		temp2 = ft_strjoin(spaces, temp);
+		flags->spaces = ft_calloc(w, sizeof(char));
+		ft_memset(flags->spaces, flags->has_zero == 1 ? '0' : ' ', w);
+		temp2 = ft_strjoin(flags->spaces, temp);
 	}
 	else if (flags->has_width == 1 && flags->has_left == 1)
 	{
 		w = ft_positivediff(flags->width, ft_strlen(temp));
-		spaces = ft_calloc(w, sizeof(char));
-		ft_memset(spaces, ' ', w);
-		temp2 = ft_strjoin(temp, spaces);
+		flags->spaces = ft_calloc(w, sizeof(char));
+		ft_memset(flags->spaces, ' ', w);
+		temp2 = ft_strjoin(temp, flags->spaces);
 	}
 	else
 		temp2 = ft_strjoin("", temp);
