@@ -19,15 +19,16 @@
 
 typedef	struct	s_flags
 {
-	size_t	width;
-	int	has_width;
-	int has_precision;
-	size_t	precision;
-	int has_left;
-	int left;
-	int has_zero;
-	int zero;
-	size_t r_count;
+	size_t		width;
+	int			has_width;
+	int 		has_precision;
+	size_t		precision;
+	int 		has_left;
+	int 		left;
+	int 		has_zero;
+	int 		zero;
+	size_t 		r_count;
+	char 		*spaces;
 }				t_flags;
 
 int			ft_printf(const char *str, ...);

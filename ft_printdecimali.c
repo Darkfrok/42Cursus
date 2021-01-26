@@ -24,6 +24,25 @@ char **spaces, char **temp2)
 		ft_memset(*(spaces), ' ', *d);
 	*(temp2) = ft_strjoin(*(spaces), *(temp));
 }
+void	auxdecimali2(t_flags *flags, int *d, char **temp,
+char **spaces, char **s)
+{
+if (flags->has_precision == 1)
+	{
+		(*d) = ft_positivediff(flags->precision, ft_strlen((*s)));
+		if ((*s)[0] == '-' && flags->precision > ft_strlen((*s)))
+			(*d)++;
+		(*spaces) = ft_calloc((*d), sizeof(char));
+		ft_memset((*spaces), '0', (*d));
+		(*temp) = ft_strjoin((*spaces), (*s));
+	}
+	else
+	{
+		(*temp) = ft_calloc(ft_strlen((*s)), sizeof(char));
+		ft_memcpy((*temp), (*s), ft_strlen((*s)));
+		(*temp)[ft_strlen((*s))] = '\0';
+	}
+}
 char	*sustituteminus(char *str)
 {
 	int pos;
@@ -57,22 +76,9 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 	}
 	else
 		s = ft_itoa(d);
-		temp2 = NULL;
-	if (flags->has_precision == 1)
-	{
-		d = ft_positivediff(flags->precision, ft_strlen(s));
-		if (s[0] == '-' && flags->precision > ft_strlen(s))
-			d++;
-		spaces = ft_calloc(d, sizeof(char));
-		ft_memset(spaces, '0', d);
-		temp = ft_strjoin(spaces, s);
-	}
-	else
-	{
-		temp = ft_calloc(ft_strlen(s), sizeof(char));
-		ft_memcpy(temp, s, ft_strlen(s));
-		temp[ft_strlen(s)] = '\0';
-	}
+	temp = NULL;
+	temp2 = NULL;
+	auxdecimali2(flags, &d, &temp, &spaces, &s);
 	sustituteminus(temp);
 	if (flags->has_width == 1 && flags->has_left == 0)
 		auxdecimali1(flags, &d, &temp, &spaces, &temp2);
