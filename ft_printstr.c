@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void auxstring1	(t_flags *flags, char **temp, char **temp2)
+void	auxstring1(t_flags *flags, char **temp, char **temp2)
 {
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{
@@ -31,6 +31,7 @@ void auxstring1	(t_flags *flags, char **temp, char **temp2)
 	else
 		(*temp2) = ft_strjoin("", (*temp));
 }
+
 void	ft_printstr(va_list args, t_flags *flags)
 {
 	char	*s;
@@ -59,7 +60,7 @@ void	ft_printstr(va_list args, t_flags *flags)
 		ft_memcpy(temp, s, ft_strlen(s));
 		temp[ft_strlen(s)] = '\0';
 	}
-
+	auxstring1(flags, &temp, &temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
