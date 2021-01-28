@@ -32,6 +32,28 @@ void	auxstring1(t_flags *flags, char **temp, char **temp2)
 		(*temp2) = ft_strjoin("", (*temp));
 }
 
+void	s_null(t_flags *flags, char *s, char **temp)
+{
+	if (s == NULL)
+	{
+		(*temp) = ft_strjoin("(null)", "");
+		if (flags->has_precision == 1)
+			(*temp)[flags->precision] = '\0';
+	}
+	else if ((flags->precision < ft_strlen(s)) && flags->has_precision == 1)
+	{
+		(*temp) = ft_calloc((ft_min(flags->precision, ft_strlen(s)) + 1),
+		sizeof(char));
+		ft_memcpy((*temp), s, flags->precision);
+	}
+	else
+	{
+		(*temp) = ft_calloc(ft_strlen(s), sizeof(char));
+		ft_memcpy((*temp), s, ft_strlen(s));
+		(*temp)[ft_strlen(s)] = '\0';
+	}
+}
+
 void	ft_printstr(va_list args, t_flags *flags)
 {
 	char	*s;
@@ -40,26 +62,7 @@ void	ft_printstr(va_list args, t_flags *flags)
 
 	s = va_arg(args, char*);
 	temp2 = NULL;
-	if (s == NULL)
-	{
-		temp = ft_strjoin("(null)", "");
-		if (flags->has_precision == 1)
-		{
-			temp[flags->precision] = '\0';
-		}
-	}
-	else if ((flags->precision < ft_strlen(s)) && flags->has_precision == 1)
-	{
-		temp = ft_calloc((ft_min(flags->precision, ft_strlen(s)) + 1),
-		sizeof(char));
-		ft_memcpy(temp, s, flags->precision);
-	}
-	else
-	{
-		temp = ft_calloc(ft_strlen(s), sizeof(char));
-		ft_memcpy(temp, s, ft_strlen(s));
-		temp[ft_strlen(s)] = '\0';
-	}
+	s_null(flags, s, &temp);
 	auxstring1(flags, &temp, &temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
