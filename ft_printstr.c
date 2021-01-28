@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2021/01/07 12:05:51 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/01/28 14:08:18 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	auxstring1(t_flags *flags, char **temp, char **temp2)
 		flags->w = ft_positivediff(flags->width, ft_strlen((*temp)));
 		flags->spaces = ft_calloc(flags->w, sizeof(char));
 		ft_memset(flags->spaces, flags->has_zero == 1 ? '0' : ' ', flags->w);
+		flags->spaces[flags->w] = '\0';
 		(*temp2) = ft_strjoin(flags->spaces, (*temp));
 	}
 	else if (flags->has_width == 1 && flags->has_left == 1)
@@ -26,6 +27,7 @@ void	auxstring1(t_flags *flags, char **temp, char **temp2)
 		flags->w = ft_positivediff(flags->width, ft_strlen((*temp)));
 		flags->spaces = ft_calloc(flags->w, sizeof(char));
 		ft_memset(flags->spaces, ' ', flags->w);
+		flags->spaces[flags->w] = '\0';
 		(*temp2) = ft_strjoin((*temp), flags->spaces);
 	}
 	else

@@ -5,3 +5,4 @@ pdfpft_2019/
 pft/
 *.o
 pft_2019/
+main.c
