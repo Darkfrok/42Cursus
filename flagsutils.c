@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2020/12/23 13:09:14 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/01/29 12:31:29 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,21 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 			flags->has_zero = 1;
 		(*pos)++;
 	}
-	// 	(*pos)++;
 	if (ft_isdigit(str[*pos]) == 1)
 	{
 		flags->has_width = 1;
 		flags->width = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
-		{
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] !=
+		'c' && str[*pos] != 'd' && str[*pos] != 'i')
 			(*pos)++;
-		}
 	}
 	if (str[*pos] == '.')
 	{
 		(*pos)++;
 		flags->has_precision = 1;
 		flags->precision = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
-		{
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] !=
+		'c' && str[*pos] != 'd' && str[*pos] != 'i')
 			(*pos)++;
-		}
 	}
 }

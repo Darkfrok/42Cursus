@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2020/12/23 13:14:57 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/01/29 13:46:33 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 	else
 		ft_memset(flags->spaces, ' ', flags->d);
 	*(temp2) = ft_strjoin(flags->spaces, *(temp));
+	free(flags->spaces);
 }
 
 void	auxdecimali2(t_flags *flags, char **temp, char **s)
@@ -35,6 +36,7 @@ void	auxdecimali2(t_flags *flags, char **temp, char **s)
 		flags->spaces = ft_calloc((flags->d), sizeof(char));
 		ft_memset(flags->spaces, '0', (flags->d));
 		(*temp) = ft_strjoin(flags->spaces, (*s));
+		free(flags->spaces);
 	}
 	else
 	{
@@ -60,6 +62,7 @@ void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 			flags->has_zero == 1 ? '0' : ' ', flags->d);
 		}
 		*(temp2) = ft_strjoin(*(temp), flags->spaces);
+		free(flags->spaces);
 	}
 	else
 		*(temp2) = ft_strjoin("", *(temp));
@@ -105,6 +108,7 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 		sustituteminus(temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
+	free(s);
 	free(temp);
 	free(temp2);
 }

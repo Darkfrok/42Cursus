@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 16:38:35 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/17 18:25:21 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/01/29 12:29:32 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,3 @@ size_t	ft_max(size_t a, size_t b)
 	else
 		return (b);
 }
-
-//coge dos numeros (a) y (b) y devuelve (a) si es mayor que (b)

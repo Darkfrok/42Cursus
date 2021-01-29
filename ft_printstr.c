@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2021/01/28 14:08:18 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/01/29 14:07:14 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	ft_printstr(va_list args, t_flags *flags)
 	auxstring1(flags, &temp, &temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
+	free(flags->spaces);
 	free(temp);
 	free(temp2);
 }
