@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2021/01/29 13:46:33 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/01 13:04:06 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	auxdecimali2(t_flags *flags, char **temp, char **s)
 			flags->d++;
 		flags->spaces = ft_calloc((flags->d), sizeof(char));
 		ft_memset(flags->spaces, '0', (flags->d));
-		(*temp) = ft_strjoin(flags->spaces, (*s));
 		free(flags->spaces);
+		(*temp) = ft_strjoin(flags->spaces, (*s));
 	}
 	else
 	{
@@ -108,7 +108,7 @@ void	ft_printdecimali(va_list args, t_flags *flags)
 		sustituteminus(temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
-	free(s);
 	free(temp);
 	free(temp2);
+	free(s);
 }

@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/24 16:19:05 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/04 12:17:01 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,6 @@ size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
 int			ft_positivediff(int a, int b);
 char 		*sustituteminus(char *str);
+char		*ft_itohex (int decimalnum);
+char		*ft_invertstr(char *str);
 #endif
