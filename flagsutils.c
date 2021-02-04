@@ -21,6 +21,7 @@ void	resetflags(t_flags *flags)
 	flags->has_left = 0;
 	flags->has_zero = 0;
 	flags->zero = 0;
+	flags->has_hex = 0;
 }
 
 void	printflags(t_flags flags)
@@ -48,6 +49,8 @@ void	printflags(t_flags flags)
 	ft_putnbr_fd(flags.has_zero, 1);
 	ft_putstr_fd("\nzero: ", 1);
 	ft_putnbr_fd(flags.zero, 1);
+	ft_putstr_fd("\nhas_hex: ", 1);
+	ft_putnbr_fd(flags.has_hex, 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("\nValor de retorno: ", 1);
 	ft_putnbr_fd(flags.r_count, 1);
@@ -83,5 +86,12 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		{
 			(*pos)++;
 		}
+	}
+	if (str[*pos] == 'x' || str[*pos] == 'X')
+	{
+		if(str[*pos] == 'x')
+			flags->has_xminus = 1;
+		(*pos)++;
+		flags->has_hex = 1;
 	}
 }

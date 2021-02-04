@@ -31,6 +31,9 @@ typedef	struct	s_flags
 	char 		*spaces;
 	int			d;
 	int			w;
+	int			x;
+	int			has_xminus;
+	int			has_hex;
 }				t_flags;
 
 int			ft_printf(const char *str, ...);
@@ -49,6 +52,6 @@ size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
 int			ft_positivediff(int a, int b);
 char 		*sustituteminus(char *str);
-char		*ft_itohex (int decimalnum);
+char		*ft_itohex(va_list args, t_flags *flags);
 char		*ft_invertstr(char *str);
 #endif

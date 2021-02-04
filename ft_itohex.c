@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 
-char    *ft_itohex (int decimalnum)
+char    *ft_itohex(va_list args, t_flags *flags)
 {
 	int quotient;
 	int remainder;
@@ -22,7 +22,7 @@ char    *ft_itohex (int decimalnum)
     char hexadecimalnum[100];
 	
 	j = 0;
-    quotient = decimalnum;
+    quotient = (flags->x = va_arg(args, int));
  
     while (j < 100)
     {
@@ -35,21 +35,13 @@ char    *ft_itohex (int decimalnum)
         remainder = quotient % 16;
         if (remainder < 10)
             hexadecimalnum[j++] = 48 + remainder;
-        else
-            hexadecimalnum[j++] = 55 + remainder;
+        else if (flags->has_xminus == 1)
+            hexadecimalnum[j++] = 87 + remainder;
+		else
+			hexadecimalnum[j++] = 55 + remainder;
         quotient = quotient / 16;
     }
-
-    j = ft_strlen(str);
     str = ft_strdup(hexadecimalnum);
-   // printf("%zu", ft_strlen(str));
-    //printf("\n");
     ft_invertstr(str);
     return (str);
-}
-
-int main(void)
-{
-	printf("%s" ,ft_itohex(45000));
-    printf("\n");
 }

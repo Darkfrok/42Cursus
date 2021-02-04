@@ -28,7 +28,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			pos++;
 			ft_checkflags(str, &flags, &pos);
-			//printflags(flags);
+			printflags(flags);
 			if (str[pos] == '%')
 			{
 				ft_putchar_fd('%', 1);
@@ -55,9 +55,9 @@ int		ft_printf(const char *str, ...)
 				ft_printu(args);
 				pos++;
 			}
-			else if (str[pos] == 'X')
+			else if (str[pos] == 'X' || str[pos] == 'x')
 			{
-				ft_printxm(args);
+				ft_itohex(args, &flags);
 				pos++;
 			}
 		}
@@ -71,18 +71,18 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-// int	main(void)
-// {
-// 	int t;
-// 	int c;
-// 	int cont;
-// 	int cont2;
+int	main(void)
+{
+	int t;
+	int c;
+	int cont;
+	int cont2;
 
-// 	t = 70;
-// 	c = 60;
-// 	  cont = ft_printf("%-32s", "abc");
-// 	printf("\nContador:    %i\n", cont);
-// 		cont2 = printf("%-32s", "abc");
-// 	printf("\nContador 2:  %i\n", cont2);
-// 	system("leaks a.out");
-// }
+	t = 70;
+	c = 60;
+	  cont = ft_printf("%d", 450);
+	printf("\nContador:    %i\n", cont);
+		cont2 = printf("%d", 450);
+	printf("\nContador 2:  %i\n", cont2);
+	system("leaks a.out");
+}
