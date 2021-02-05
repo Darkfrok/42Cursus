@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/04 12:17:01 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/05 12:57:18 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef	struct	s_flags
 	int			d;
 	int			w;
 	int			x;
-	int			has_xminus;
+	int			has_xmayus;
 	int			has_hex;
 }				t_flags;
 
@@ -52,6 +52,8 @@ size_t 		ft_min(size_t a, size_t b);
 size_t 		ft_max(size_t a, size_t b);
 int			ft_positivediff(int a, int b);
 char 		*sustituteminus(char *str);
-char		*ft_itohex(va_list args, t_flags *flags);
+char		*ft_itohex(int decimalnum);
 char		*ft_invertstr(char *str);
+void		ft_printhex(va_list args, t_flags *flags);
+char 		*ft_strtoupper(char * temp);
 #endif
