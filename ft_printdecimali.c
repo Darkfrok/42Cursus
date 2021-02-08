@@ -6,13 +6,13 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/01 13:04:06 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/08 14:07:18 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
+static void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 {
 	flags->d = ft_positivediff(flags->width, ft_strlen(*temp));
 	flags->spaces = ft_calloc(flags->d, sizeof(char));
@@ -26,7 +26,7 @@ void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 	free(flags->spaces);
 }
 
-void	auxdecimali2(t_flags *flags, char **temp, char **s)
+static void	auxdecimali2(t_flags *flags, char **temp, char **s)
 {
 	if (flags->has_precision == 1)
 	{
@@ -46,7 +46,7 @@ void	auxdecimali2(t_flags *flags, char **temp, char **s)
 	}
 }
 
-void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
+static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 {
 	if (flags->has_width == 1 && flags->has_left == 0)
 		auxdecimali1(flags, temp, temp2);

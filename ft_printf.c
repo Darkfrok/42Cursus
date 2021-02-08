@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/05 12:48:22 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/08 14:04:08 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_printf(const char *str, ...)
 			resetflags(&flags);
 			pos++;
 			ft_checkflags(str, &flags, &pos);
-			//printflags(flags);
+			printflags(flags);
 			if (str[pos] == '%')
 			{
 				ft_putchar_fd('%', 1);
@@ -80,9 +80,9 @@ int	main(void)
 
 	t = 70;
 	c = 60;
-	  cont = ft_printf("%X", 450);
+	  cont = ft_printf("%7x", 33);
 	printf("\nContador:    %i\n", cont);
-		cont2 = printf("%X", 450);
+		cont2 = printf("%7x", 33);
 	printf("\nContador 2:  %i\n", cont2);
 //	system("leaks a.out");
 }

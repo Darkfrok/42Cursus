@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/05 12:57:57 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/08 13:18:19 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	resetflags(t_flags *flags)
 	flags->has_zero = 0;
 	flags->zero = 0;
 	flags->has_hex = 0;
+	flags->has_xmayus = 0;
 }
 
 void	printflags(t_flags flags)
@@ -51,6 +52,8 @@ void	printflags(t_flags flags)
 	ft_putnbr_fd(flags.zero, 1);
 	ft_putstr_fd("\nhas_hex: ", 1);
 	ft_putnbr_fd(flags.has_hex, 1);
+	ft_putstr_fd("\nhas_xmayus: ", 1);
+	ft_putnbr_fd(flags.has_xmayus, 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("\nValor de retorno: ", 1);
 	ft_putnbr_fd(flags.r_count, 1);

@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2020/12/30 17:14:39 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/08 12:34:17 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,10 @@ ft_positivediff.c \
 flagsutils.c \
 ft_printxm.c \
 ft_printx.c \
+ft_printhex.c \
+ft_itohex.c \
+ft_strtoupper.c \
+ft_invertstr.c \
 
 OBJFOLDER = libft/
 

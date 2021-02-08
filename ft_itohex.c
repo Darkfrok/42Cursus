@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:17:39 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/05 12:24:47 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/08 13:28:04 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char    *ft_itohex(int decimalnum)
         else
             hexadecimalnum[j++] = 87 + remainder;
         quotient = quotient / 16;
-    }
+    } 
     str = ft_strdup(hexadecimalnum);
     ft_invertstr(str);
     return (str);
