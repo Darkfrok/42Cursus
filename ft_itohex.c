@@ -6,11 +6,9 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:17:39 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/08 13:28:04 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/09 12:41:24 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
 
 #include "ft_printf.h"
 #include <stdlib.h>

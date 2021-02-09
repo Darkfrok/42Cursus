@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/08 13:18:19 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/09 13:39:29 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		flags->has_width = 1;
 		flags->width = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i' &&
+		str[*pos] != 'x' && str[*pos] != 'X')
 		{
 			(*pos)++;
 		}
@@ -85,7 +86,8 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		(*pos)++;
 		flags->has_precision = 1;
 		flags->precision = ft_atoi(&str[*pos]);
-		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i')
+		while (str[*pos] != 's' && str[*pos] != '.' && str[*pos] != 'c' && str[*pos] != 'd' && str[*pos] != 'i' &&
+		str[*pos] != 'x' && str[*pos] != 'X')
 		{
 			(*pos)++;
 		}
@@ -95,6 +97,7 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 		if(str[*pos] == 'X')
 			flags->has_xmayus = 1;
 		//(*pos)++;
+		//printf("test");
 		flags->has_hex = 1;
 	}
 }

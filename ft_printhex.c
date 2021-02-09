@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 11:48:26 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/08 14:32:23 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/09 13:58:48 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,10 @@ void	ft_printhex(va_list args, t_flags *flags)
 	auxdecimali3(flags, &temp, &temp2);
 	if (flags->has_zero == 1 && flags->has_width == 1 && temp2[0] == '0')
 		sustituteminus(temp2);
+	if(flags->has_xmayus == 1){
+	//	printf("%s", temp2);
+       temp2 = ft_strtoupper(temp2);
+	}
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
