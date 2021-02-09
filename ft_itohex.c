@@ -6,19 +6,19 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:17:39 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/09 12:41:24 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/09 14:43:35 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdlib.h>
 
-char    *ft_itohex(int decimalnum)
+char    *ft_itohex(unsigned int decimalnum)
 {
-	int quotient;
-	int remainder;
+	unsigned int quotient;
+	unsigned int remainder;
 	char *str;
-	int j;
+	unsigned int j;
     char hexadecimalnum[100];
 
 	j = 0;
