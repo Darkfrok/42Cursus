@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/09 14:44:17 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/10 14:25:19 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int		ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[pos] != '\0')
 	{
-		if (str[pos] == '%')
+		if (str[pos] == '%' && str[pos + 1] != '\0')
 		{
 			resetflags(&flags);
-			pos++;
+				pos++;
 			ft_checkflags(str, &flags, &pos);
 			//printflags(flags);
 			if (str[pos] == '%')
@@ -52,12 +52,17 @@ int		ft_printf(const char *str, ...)
 			}
 			else if (str[pos] == 'u')
 			{
-				ft_printu(args);
+				ft_printu(args, &flags);
 				pos++;
 			}
 			else if (str[pos] == 'X' || str[pos] == 'x')
 			{
 				ft_printhex(args, &flags);
+				pos++;
+			}
+			else if (str[pos] == 'p')
+			{
+				ft_printpointer(args, &flags);
 				pos++;
 			}
 		}
@@ -80,9 +85,9 @@ int		ft_printf(const char *str, ...)
 
 // 	t = 70;
 // 	c = 60;
-// 	  cont = ft_printf("%x", 4294967295u);
+// 	  cont = ft_printf("%5%");
 // 	printf("\nContador:    %i\n", cont);
-// 		cont2 = printf("%x", 4294967295u);
+// 		cont2 = printf("%5%");
 // 	printf("\nContador 2:  %i\n", cont2);
 // 	//system("leaks a.out");
 // }

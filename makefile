@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/08 12:34:17 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/10 14:00:12 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ ft_printhex.c \
 ft_itohex.c \
 ft_strtoupper.c \
 ft_invertstr.c \
+ft_printpointer.c \
 
 OBJFOLDER = libft/
 
@@ -66,7 +67,8 @@ LIBSOURCE = libft/ft_atoi.c \
 			libft/ft_split.c \
 			libft/ft_strjoin.c \
 			libft/ft_strmapi.c \
-			libft/ft_strtrim.c 
+			libft/ft_strtrim.c \
+			libft/ft_utoa.c \
 
 OBJ = $(SOURCE:.c=.o)
 
