@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/10 13:48:58 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/11 15:23:35 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,6 @@ char		*ft_itohex(unsigned int decimalnum);
 char		*ft_invertstr(char *str);
 void		ft_printhex(va_list args, t_flags *flags);
 char 		*ft_strtoupper(char * temp);
+void		putcharpercent(char *s, t_flags *flags);
+char    	*ft_longtohex(unsigned long decimalnum);
 #endif

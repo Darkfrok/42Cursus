@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/10 14:00:12 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/11 12:04:38 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ ft_itohex.c \
 ft_strtoupper.c \
 ft_invertstr.c \
 ft_printpointer.c \
+ft_putcharpercent.c \
 
 OBJFOLDER = libft/
 
