@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 13:20:59 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 15:36:07 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/11 17:01:57 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 		//printf("temp8 %s \n", temp2);
 		*(temp2) = ft_strjoin(*(temp), flags->spaces);
 		free(flags->spaces);
+		//free(*(temp));
 		//printf("temp9 %s \n", temp);
 		//printf("temp10 %s \n", temp2);
 	}
