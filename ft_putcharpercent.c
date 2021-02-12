@@ -6,12 +6,11 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 11:45:32 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 12:03:52 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:08:57 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 static void	auxstring1(t_flags *flags, char **temp, char **temp2)
 {
@@ -59,9 +58,8 @@ static void	s_null(t_flags *flags, char *s, char **temp)
 	}
 }
 
-void	putcharpercent(char *s , t_flags *flags)
+void		putcharpercent(char *s, t_flags *flags)
 {
-	//char	*s;
 	char	*temp;
 	char	*temp2;
 
@@ -70,7 +68,7 @@ void	putcharpercent(char *s , t_flags *flags)
 	auxstring1(flags, &temp, &temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
-    (flags->r_count)--;
+	(flags->r_count)--;
 	free(temp);
 	free(temp2);
 }

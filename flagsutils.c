@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 12:15:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:06:56 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,6 @@ void	ft_checkflags(const char *str, t_flags *flags, int *pos)
 	{
 		if(str[*pos] == 'X')
 			flags->has_xmayus = 1;
-		//(*pos)++;
-		//printf("test");
 		flags->has_hex = 1;
 	}
 }

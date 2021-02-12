@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 13:20:59 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 17:01:57 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:12:15 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 	//printf("tempjo %s \n", *(temp2));
 	//printf("tempjos %s \n", flags->spaces);
 	*(temp2) = ft_strjoin(flags->spaces, *(temp));
+	//free(temp);
 	//printf("tempjos %s \n", flags->spaces);
 	//printf("tempin %s \n", *(temp));
 	//printf("tempin %s \n", *(temp2));
@@ -98,11 +99,14 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 		//printf("temp10 %s \n", temp2);
 	}
 	else
+	{
 		*(temp2) = ft_strjoin("", *(temp));
+		//free(temp2);
 		////printf("test8\n");
+	}
 }
 
-void	ft_printpointer(va_list args, t_flags *flags)
+void		ft_printpointer(va_list args, t_flags *flags)
 {
 	char	*s;
 	char	*temp;

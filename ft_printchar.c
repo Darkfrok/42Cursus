@@ -6,12 +6,11 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 11:50:21 by cquezada          #+#    #+#             */
-/*   Updated: 2020/11/24 11:28:42 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:03:32 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 void	ft_printchar(va_list args, t_flags *flags)
 {

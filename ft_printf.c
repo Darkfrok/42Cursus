@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 15:36:55 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:19:55 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ int		ft_printf(const char *str, ...)
 
 // 	t = 70;
 // 	c = 60;
-// 	  cont = ft_printf("p: %p %p %p %p %p %p %p %p %p %p %p %p\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+// 	  cont = ft_printf("ft_printf: %p", t);
 // 	printf("\nContador:    %i\n", cont);
-// 		cont2 = printf("p: %p %p %p %p %p %p %p %p %p %p %p %p\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+// 		cont2 = printf("printf: %p", t);
 // 	printf("\nContador 2:  %i\n", cont2);
-// 	//system("leaks a.out");
+// 	system("leaks a.out");
 // }

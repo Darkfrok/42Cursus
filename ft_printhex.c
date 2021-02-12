@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 11:48:26 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/09 14:42:55 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:10:09 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 		*(temp2) = ft_strjoin("", *(temp));
 }
 
-void	ft_printhex(va_list args, t_flags *flags)
+void		ft_printhex(va_list args, t_flags *flags)
 {
 	char	*s;
 	char	*temp;
@@ -82,28 +82,24 @@ void	ft_printhex(va_list args, t_flags *flags)
 	}
 	else if (flags->d == 0)
 	{
-		s = malloc(sizeof(char)+1);
+		s = malloc(sizeof(char) + 1);
 		s[0] = '0';
 		s[1] = '\0';
 	}
-	
 	else
 		s = ft_itohex(flags->d);
-    temp = NULL;
+	temp = NULL;
 	temp2 = NULL;
 	auxdecimali2(flags, &temp, &s);
 	sustituteminus(temp);
 	auxdecimali3(flags, &temp, &temp2);
 	if (flags->has_zero == 1 && flags->has_width == 1 && temp2[0] == '0')
 		sustituteminus(temp2);
-	if(flags->has_xmayus == 1){
-	//	printf("%s", temp2);
-       temp2 = ft_strtoupper(temp2);
-	}
+	if (flags->has_xmayus == 1)
+		temp2 = ft_strtoupper(temp2);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
 	free(temp2);
 	free(s);
 }
-
