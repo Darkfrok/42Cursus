@@ -4,4 +4,4 @@ alias normi="norminette"
 alias gcpp="gcc -Wall -Werror -Wextra *.c Libft/*.c && ./a.out && rm a.out"
 alias mk="cd pft_2019/ && make re && ./test d && cp pft_2019/results.txt Resources"pull
 alias gct="gcc main.c ../*.c ../libft/*.c -o leaks && ./leaks"
-alias mkre="make re && ./test s && ./test d && ./test c && ./test X && ./test x && ./test u"
+alias mkre="make re && ./test s && ./test d && ./test c && ./test X && ./test x && ./test u && ./test p"

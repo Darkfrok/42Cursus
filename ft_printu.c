@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 10:05:11 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/12 18:09:41 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:26:19 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 		*(temp2) = ft_strjoin("", *(temp));
 }
 
-void		ft_printu(va_list args, t_flags *flags)
+void		ft_printu(va_list args, t_flags *flags, int *pos)
 {
 	char	*s;
 	char	*temp;
@@ -94,4 +94,5 @@ void		ft_printu(va_list args, t_flags *flags)
 	free(temp);
 	free(temp2);
 	free(s);
+	(*pos)++;
 }

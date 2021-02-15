@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/01 13:34:27 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:24:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	s_null(t_flags *flags, char *s, char **temp)
 	}
 }
 
-void	ft_printstr(va_list args, t_flags *flags)
+void	ft_printstr(va_list args, t_flags *flags, int *pos)
 {
 	char	*s;
 	char	*temp;
@@ -72,4 +72,5 @@ void	ft_printstr(va_list args, t_flags *flags)
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
 	free(temp2);
+	(*pos)++;
 }

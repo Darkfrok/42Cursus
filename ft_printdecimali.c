@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 12:28:00 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/12 18:11:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:24:51 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char		*sustituteminus(char *str)
 	return (str);
 }
 
-void		ft_printdecimali(va_list args, t_flags *flags)
+void		ft_printdecimali(va_list args, t_flags *flags, int *pos)
 {
 	char	*s;
 	char	*temp;
@@ -111,4 +111,5 @@ void		ft_printdecimali(va_list args, t_flags *flags)
 	free(temp);
 	free(temp2);
 	free(s);
+	(*pos)++;
 }

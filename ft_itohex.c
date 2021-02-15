@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 11:17:39 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/12 18:14:15 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:26:31 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 char	*ft_itohex(unsigned int decimalnum)
 {
-	unsigned int 	quotient;
-	unsigned int 	remainder;
-	char 			*str;
-	unsigned int 	j;
-	char 			hexadecimalnum[100];
+	unsigned int	quotient;
+	unsigned int	remainder;
+	char			*str;
+	unsigned int	j;
+	char			hexadecimalnum[100];
 
 	j = 0;
 	quotient = decimalnum;
@@ -46,7 +46,7 @@ char	*ft_longtohex(unsigned long decimalnum)
 	unsigned long	remainder;
 	char			*str;
 	unsigned long	j;
-	char 			hexadecimalnum[100];
+	char			hexadecimalnum[100];
 
 	j = 0;
 	quotient = decimalnum;

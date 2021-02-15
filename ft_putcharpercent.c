@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 11:45:32 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/12 18:08:57 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:25:44 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	s_null(t_flags *flags, char *s, char **temp)
 	}
 }
 
-void		putcharpercent(char *s, t_flags *flags)
+void		putcharpercent(char *s, t_flags *flags, int *pos)
 {
 	char	*temp;
 	char	*temp2;
@@ -71,4 +71,6 @@ void		putcharpercent(char *s, t_flags *flags)
 	(flags->r_count)--;
 	free(temp);
 	free(temp2);
+	(*pos)++;
+	flags->r_count++;
 }

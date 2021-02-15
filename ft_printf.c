@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/15 13:15:56 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:22:03 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_printf(const char *str, ...)
 {
-	va_list args;
-	int pos;
-	t_flags	flags;
+	va_list		args;
+	int			pos;
+	t_flags		flags;
 
 	pos = 0;
 	flags.r_count = 0;
@@ -26,45 +26,22 @@ int		ft_printf(const char *str, ...)
 		if (str[pos] == '%' && str[pos + 1] != '\0')
 		{
 			resetflags(&flags);
-				pos++;
+			pos++;
 			ft_checkflags(str, &flags, &pos);
-			//printflags(flags);
 			if (str[pos] == '%')
-			{
-				putcharpercent("%", &flags);
-				flags.r_count++;
-				pos++;
-			}
+				putcharpercent("%", &flags, &pos);
 			else if (str[pos] == 's')
-			{
-				ft_printstr(args, &flags);
-				pos++;
-			}
+				ft_printstr(args, &flags, &pos);
 			else if (str[pos] == 'c')
-			{
-				ft_printchar(args, &flags);
-				pos++;
-			}
-			else if (str[pos] == ('d') || str[pos] == ('i'))
-			{
-				ft_printdecimali(args, &flags);
-				pos++;
-			}
+				ft_printchar(args, &flags, &pos);
+			else if (str[pos] == 'd' || str[pos] == 'i')
+				ft_printdecimali(args, &flags, &pos);
 			else if (str[pos] == 'u')
-			{
-				ft_printu(args, &flags);
-				pos++;
-			}
+				ft_printu(args, &flags, &pos);
 			else if (str[pos] == 'X' || str[pos] == 'x')
-			{
-				ft_printhex(args, &flags);
-				pos++;
-			}
+				ft_printhex(args, &flags, &pos);
 			else if (str[pos] == 'p')
-			{
-				ft_printpointer(args, &flags);
-				pos++;
-			}
+				ft_printpointer(args, &flags, &pos);
 		}
 		else
 		{

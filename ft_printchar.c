@@ -6,13 +6,13 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 11:50:21 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/12 18:03:32 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:19:31 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printchar(va_list args, t_flags *flags)
+void	ft_printchar(va_list args, t_flags *flags, int *pos)
 {
 	char	c;
 	size_t	i;
@@ -37,4 +37,5 @@ void	ft_printchar(va_list args, t_flags *flags)
 			i++;
 			flags->r_count++;
 		}
+	(*pos)++;
 }

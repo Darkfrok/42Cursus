@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/11 15:23:35 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/15 18:22:09 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ typedef	struct	s_flags
 }					t_flags;
 
 int			ft_printf(const char *str, ...);
-void		ft_printstr(va_list args, t_flags *flags);
-void		ft_printchar(va_list args, t_flags *flags);
-void		ft_printdecimali(va_list args, t_flags *flags);
-void		ft_printu(va_list args, t_flags *flags);
+void		ft_printstr(va_list args, t_flags *flags, int *pos);
+void		ft_printchar(va_list args, t_flags *flags, int *pos);
+void		ft_printdecimali(va_list args, t_flags *flags, int *pos);
+void		ft_printu(va_list args, t_flags *flags, int *pos);
 void		ft_printxm(va_list args);
 void		ft_printx(va_list args);
-void		ft_printpointer(va_list args, t_flags *flags);
+void		ft_printpointer(va_list args, t_flags *flags, int *pos);
 void		resetflags(t_flags *flags);
 void		printflags(t_flags flags);
 void		ft_checkflags(const char *str, t_flags *flags, int *pos);
@@ -55,8 +55,8 @@ int			ft_positivediff(int a, int b);
 char 		*sustituteminus(char *str);
 char		*ft_itohex(unsigned int decimalnum);
 char		*ft_invertstr(char *str);
-void		ft_printhex(va_list args, t_flags *flags);
-char 		*ft_strtoupper(char * temp);
-void		putcharpercent(char *s, t_flags *flags);
+void		ft_printhex(va_list args, t_flags *flags, int *pos);
+char 		*ft_strtoupper(char *temp);
+void		putcharpercent(char *s, t_flags *flags, int *pos);
 char    	*ft_longtohex(unsigned long decimalnum);
 #endif
