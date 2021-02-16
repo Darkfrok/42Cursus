@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/11 12:04:38 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/16 13:54:39 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ ft_max.c \
 ft_positivediff.c \
 flagsutils.c \
 ft_printxm.c \
-ft_printx.c \
 ft_printhex.c \
 ft_itohex.c \
 ft_strtoupper.c \
