@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/16 19:11:14 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/17 12:20:53 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ OBJ = $(SOURCE:.c=.o)
 
 LIBOBJ = $(LIBSOURCE:.c=.o)
 
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror
 
 LFLAGS = -c
 
@@ -84,7 +84,7 @@ all: $(NAME)
 $(NAME): $(LIBOBJ) $(OBJ)
 	@gcc $(CFLAGS) $(LFLAGS) $(LIBSOURCE)
 	@mv -f *.o libft
-	@gcc -g3 $(CFLAGS) $(LFLAGS) $(SOURCE)
+	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
 	@ar rc $(LNAME) $(OBJ) $(LIBOBJ)
 	@ranlib $(LNAME)
 	@echo "Compiled '$(NAME)' successfully"
@@ -107,7 +107,7 @@ test: fclean
 	@echo "Enabling debug\n"
 	@sed -i '' 's/debug = 0/debug = 1/g' ft_printf.c
 	@echo "Testing...\n"
-	@gcc -g3  *.c ./libft/*.c ./test/main.c
+	@gcc   *.c ./libft/*.c ./test/main.c
 	@echo "\ntest result:"
 	@./a.out
 	@echo "\n"
