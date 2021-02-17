@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/17 14:38:17 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/17 19:15:08 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	resetflags(t_flags *flags)
 	flags->zero = 0;
 	flags->has_hex = 0;
 	flags->has_xmayus = 0;
+	flags->left = 0;
 }
 
 void	printflags(t_flags flags)	
@@ -99,20 +100,22 @@ void	ft_checkflags(va_list args, const char *str, t_flags *flags, int *pos)
 	}
 	if (str[*pos] == '.')
 	{
+		flags->has_precision = 1;
 		(*pos)++;
 		if (str[*pos] == '*')
 		{
 			temp = 0;
-			flags->has_precision = 1;
 			temp = va_arg(args, int);
 			//printf("%i\n", temp);
 			if (temp < 0)
 			{
+				flags->has_precision = 0;
 				//printf("Hola")
 				//flags->has_left = 1;
 				// if (flags->)
 				// {
-				flags->precision = -(temp);
+				temp = 0;
+				flags->precision =  temp;
 				// }
 			//	printf("precion:%i\n", flags->precision);
 			}
@@ -120,7 +123,7 @@ void	ft_checkflags(va_list args, const char *str, t_flags *flags, int *pos)
 				flags->precision =  temp;
 			
 			// flags->precision = va_arg(args, int);
-			//(*pos)++;
+			(*pos)++;
 		}
 		else
 		{
