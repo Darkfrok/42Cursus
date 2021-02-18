@@ -6,7 +6,7 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/15 14:07:35 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/17 12:21:54 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/18 14:20:18 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,11 +93,11 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
-	ar rcs $(LNAME) $(LSOURCE)
+	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
+	@ar rcs $(LNAME) $(LSOURCE)
 	
 clean:
-	rm -f *.o
+	rm -f $(LSOURCE)
 
 fclean: clean
 	rm -f $(LNAME)

@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 13:20:59 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/16 20:03:23 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/18 13:56:41 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 		ft_memset(flags->spaces, '0', flags->d);
 	else
 		ft_memset(flags->spaces, ' ', flags->d);
-	free(*temp2);
 	*(temp2) = ft_strjoin(flags->spaces, *(temp));
 	free(flags->spaces);
 }
@@ -47,8 +46,9 @@ static void	auxdecimali2(t_flags *flags, char **temp, char **s)
 	}
 }
 
-static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
+static void	auxdecimali3(t_flags *flags, char **temp, char **temp2, int *pos)
 {
+	free(*temp2);
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{
 		ft_bzero(*(temp2), ft_strlen(*(temp2)));
@@ -65,15 +65,12 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 			ft_memset(flags->spaces,
 			flags->has_zero == 1 ? '0' : ' ', flags->d);
 		}
-		free(*temp2);
 		*(temp2) = ft_strjoin(*(temp), flags->spaces);
 		free(flags->spaces);
 	}
 	else
-	{
-		free(*temp2);
 		*(temp2) = ft_strjoin("", *(temp));
-	}
+	(*pos)++;
 }
 
 void		ft_printpointer(va_list args, t_flags *flags, int *pos)
@@ -87,25 +84,20 @@ void		ft_printpointer(va_list args, t_flags *flags, int *pos)
 	temp2 = NULL;
 	d = va_arg(args, unsigned long);
 	if (d == 0 && flags->has_precision == 1)
-	{
 		s = ft_calloc(sizeof(char), 1);
-		s[0] = '\0';
-	}
 	else if (d == 0)
 	{
-		s = ft_calloc(sizeof(char) + 1, 1);
+		s = ft_calloc(sizeof(char), 2);
 		s[0] = '0';
-		s[1] = '\0';
 	}
 	else
 		s = ft_longtohex(d);
 	auxdecimali2(flags, &temp2, &s);
 	temp = ft_strjoin("0x", temp2);
-	auxdecimali3(flags, &temp, &temp2);
+	auxdecimali3(flags, &temp, &temp2, pos);
 	ft_putstr_fd(temp2, 1);
 	(flags->r_count) += ft_strlen(temp2);
 	free(temp);
 	free(temp2);
 	free(s);
-	(*pos)++;
 }

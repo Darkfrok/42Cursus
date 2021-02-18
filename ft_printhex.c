@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 11:48:26 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/15 18:27:06 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/18 13:46:25 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,11 @@ void		ft_printhex(va_list args, t_flags *flags, int *pos)
 
 	flags->d = va_arg(args, unsigned int);
 	if (flags->d == 0 && flags->has_precision == 1)
-	{
-		s = malloc(sizeof(char));
-		s[0] = '\0';
-	}
+		s = ft_calloc(sizeof(char), 1);
 	else if (flags->d == 0)
 	{
-		s = malloc(sizeof(char) + 1);
+		s = ft_calloc(sizeof(char), 2);
 		s[0] = '0';
-		s[1] = '\0';
 	}
 	else
 		s = ft_itohex(flags->d);
