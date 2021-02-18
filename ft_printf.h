@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:54:51 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/17 11:08:40 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/18 11:34:37 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef	struct	s_flags
 	unsigned int	u;
 	int				has_xmayus;
 	int				has_hex;
+	int				pair_percent;
 }					t_flags;
 
 int			ft_printf(const char *str, ...);
@@ -57,6 +58,6 @@ char		*ft_itohex(unsigned int decimalnum);
 char		*ft_invertstr(char *str);
 void		ft_printhex(va_list args, t_flags *flags, int *pos);
 char 		*ft_strtoupper(char *temp);
-void		putcharpercent(char *s, t_flags *flags, int *pos);
+void		putcharpercent(t_flags *flags, int *pos);
 char    	*ft_longtohex(unsigned long decimalnum);
 #endif

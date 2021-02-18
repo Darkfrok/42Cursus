@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/17 20:12:20 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/18 11:35:17 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_printf(const char *str, ...)
 			ft_checkflags(args, str, &flags, &pos);
 			//printflags(flags);
 			if (str[pos] == '%')
-				putcharpercent("%", &flags, &pos);
+				putcharpercent(&flags, &pos);
 			else if (str[pos] == 's')
 				ft_printstr(args, &flags, &pos);
 			else if (str[pos] == 'c')
@@ -57,18 +57,18 @@ int		ft_printf(const char *str, ...)
 	return (flags.r_count);
 }
 
-int	main(void)
-{
-	int t;
-	int c;
-	int cont;
-	int cont2;
+// int	main(void)
+// {
+// 	int t;
+// 	int c;
+// 	int cont;
+// 	int cont2;
 
-	t = 70;
-	c = 60;
-	cont = ft_printf("%%04.2i 42 == |%04.2i|", 42);
-	printf("\nContador:    %i\n", cont);
-	cont2 = printf("%%04.2i 42 == |%04.2i|", 42);
-	printf("\nContador 2:  %i\n", cont2);
-	//system("leaks a.out");
-}
+// 	t = 70;
+// 	c = 60;
+// 	cont = ft_printf("%% %04.2i", 37);
+// 	printf("\nContador:    %i\n", cont);
+// 	cont2 = printf("%% %04.2i", 37);
+// 	printf("\nContador 2:  %i\n", cont2);
+// 	//system("leaks a.out");
+// }

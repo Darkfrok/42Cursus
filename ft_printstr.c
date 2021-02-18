@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:26:20 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/17 14:24:00 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/18 11:22:57 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	auxstring1(t_flags *flags, char **temp, char **temp2)
 	if (flags->has_width == 1 && flags->has_left == 0)
 	{
 		flags->w = ft_positivediff(flags->width, ft_strlen((*temp)));
-		flags->spaces = ft_calloc(flags->w, sizeof(char));
+		flags->spaces = ft_calloc(flags->w + 1, sizeof(char));
 		ft_memset(flags->spaces, flags->has_zero == 1 ? '0' : ' ', flags->w);
 		flags->spaces[flags->w] = '\0';
 		(*temp2) = ft_strjoin(flags->spaces, (*temp));
@@ -26,7 +26,7 @@ void	auxstring1(t_flags *flags, char **temp, char **temp2)
 	else if (flags->has_width == 1 && flags->has_left == 1)
 	{
 		flags->w = ft_positivediff(flags->width, ft_strlen((*temp)));
-		flags->spaces = ft_calloc(flags->w, sizeof(char));
+		flags->spaces = ft_calloc(flags->w + 1, sizeof(char));
 		ft_memset(flags->spaces, ' ', flags->w);
 		flags->spaces[flags->w] = '\0';
 		(*temp2) = ft_strjoin((*temp), flags->spaces);
