@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 12:59:15 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/18 13:30:42 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:17:23 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,19 @@ int			ft_printf(const char *str, ...)
 	chkletter(str, &pos, &flags, args);
 	return (flags.r_count);
 }
+
+// int	main(void)
+// {
+// 	int t;
+// 	int c;
+// 	int cont;
+// 	int cont2;
+
+
+// 	t = 70;
+// 	c = 60;
+// 	cont = ft_printf("%*.*i", 42, 42, 42);
+// 	printf("\nContador:    %i\n", cont);
+// 	cont2 =   printf("%*.*i", 42, 42, 42);
+// 	printf("\nContador 2:  %i\n", cont2);
+// }

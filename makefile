@@ -6,11 +6,11 @@
 #    By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 16:38:49 by cquezada          #+#    #+#              #
-#    Updated: 2021/02/18 14:21:10 by cquezada         ###   ########.fr        #
+#    Updated: 2021/02/19 13:55:53 by cquezada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SOURCE = 	ft_printf.c \
 			ft_printstr.c \
@@ -38,6 +38,7 @@ LFLAGS = -c
 
 # Rule to build your object files and link them into a binary
 $(NAME): $(OBJ)
+	@make -C $(LIBFTFOLDER)/
 	@gcc -g -c $(SOURCE) $(LIBFT) 2> /dev/null
 	@ar rc $(LIBFT) $(OBJ)
 	@cp $(LIBFT) $(NAME)
@@ -47,12 +48,14 @@ all: $(NAME)
 
 # Rule to remove object files
 clean:
-	@rm -f $(LIBOBJ) $(LBONUSSRC) $(OBJ) $(LIBOBJ) libft/*.o
+	@make clean -C $(LIBFTFOLDER)/
+	@rm -f $(OBJ)
 	@echo "Cleaned objects successfully"
 
 # Rule to remove binary, calls the 'clean' rule first
 fclean: clean
 	@rm -f $(NAME)
+	@make fclean -C $(LIBFTFOLDER)/
 	@echo "Removed '$(NAME)' with success"
 
 # Rule to remove object files and binary, then re-build everything

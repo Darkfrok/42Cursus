@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 11:48:26 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/18 13:46:25 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:29:33 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	auxdecimali1(t_flags *flags, char **temp, char **temp2)
 		ft_memset(flags->spaces, '0', flags->d);
 	else
 		ft_memset(flags->spaces, ' ', flags->d);
+	flags->spaces[flags->d] = '\0';
 	*(temp2) = ft_strjoin(flags->spaces, *(temp));
 	free(flags->spaces);
 }
@@ -35,6 +36,7 @@ static void	auxdecimali2(t_flags *flags, char **temp, char **s)
 			flags->d++;
 		flags->spaces = ft_calloc((flags->d), sizeof(char));
 		ft_memset(flags->spaces, '0', (flags->d));
+		flags->spaces[flags->d] = '\0';
 		free(flags->spaces);
 		(*temp) = ft_strjoin(flags->spaces, (*s));
 	}
@@ -61,6 +63,7 @@ static void	auxdecimali3(t_flags *flags, char **temp, char **temp2)
 			ft_memset(flags->spaces,
 			flags->has_zero == 1 ? '0' : ' ', flags->d);
 		}
+		flags->spaces[flags->d] = '\0';
 		*(temp2) = ft_strjoin(*(temp), flags->spaces);
 		free(flags->spaces);
 	}

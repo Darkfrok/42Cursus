@@ -6,7 +6,7 @@
 /*   By: cquezada <cquezada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 10:54:27 by cquezada          #+#    #+#             */
-/*   Updated: 2021/02/18 13:11:39 by cquezada         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:04:44 by cquezada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ void		resetflags(t_flags *flags)
 
 static void	auxif1(va_list args, const char *str, t_flags *flags, int *pos)
 {
+	int temp;
+
+	temp = 0;
 	if (str[*pos] == '.')
 	{
 		flags->has_precision = 1;
@@ -35,16 +38,14 @@ static void	auxif1(va_list args, const char *str, t_flags *flags, int *pos)
 	}
 	if (str[*pos] == '*')
 	{
-		flags->temp_star = 0;
-		flags->temp_star = va_arg(args, int);
-		if (flags->temp_star < 0)
+		temp = va_arg(args, int);
+		if (temp < 0)
 		{
 			flags->has_precision = 0;
-			flags->temp_star = 0;
-			flags->precision = flags->temp_star;
+			flags->precision = 0;
 		}
 		else
-			flags->precision = flags->temp_star;
+			flags->precision = temp;
 		(*pos)++;
 	}
 	else
@@ -84,6 +85,9 @@ static void	auxif2(va_list args, const char *str, t_flags *flags, int *pos)
 void		ft_checkflags(va_list args, const char *str, t_flags *flags,
 			int *pos)
 {
+	int temp;
+
+	temp = 0;
 	while (str[*pos] == '0' || str[*pos] == '-')
 	{
 		str[*pos] == '-' ? flags->has_left = 1 : 1;
@@ -93,15 +97,14 @@ void		ft_checkflags(va_list args, const char *str, t_flags *flags,
 	if (str[*pos] == '*')
 	{
 		flags->has_width = 1;
-		flags->temp_star = 0;
-		flags->temp_star = va_arg(args, int);
-		if (flags->temp_star < 0)
+		temp = va_arg(args, int);
+		if (temp < 0)
 		{
 			flags->has_left = 1;
-			flags->width = -flags->temp_star;
+			flags->width = -temp;
 		}
 		else
-			flags->width = flags->temp_star;
+			flags->width = temp;
 		(*pos)++;
 	}
 	auxif2(args, str, flags, pos);
